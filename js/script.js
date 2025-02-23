@@ -12,3 +12,4 @@ if (yearSpan) {
   const currentYear = new Date().getFullYear();
   yearSpan.textContent = currentYear;
 }
+
