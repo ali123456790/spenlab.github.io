@@ -13,12 +13,13 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #fafafa;
+  color: #fff;             /* Main text color: white */
+  background-color: #000;  /* Main background: black */
 }
 
 h1, h2, h3, h4 {
   font-weight: 600;
+  color: #FFD700;          /* Gold headings */
 }
 
 p, li {
@@ -26,22 +27,23 @@ p, li {
 }
 
 a {
-  color: #007acc;
+  color: #FFD700;          /* Gold links */
   text-decoration: none;
 }
-
 a:hover {
+  color: #fff;             /* White on hover for contrast */
   text-decoration: underline;
 }
 
 /* Optional highlight class for special emphasis links */
 .link-highlight {
   font-weight: bold;
-  color: #007acc;
+  color: #FFD700;
   text-decoration: none;
 }
 .link-highlight:hover {
   text-decoration: underline;
+  color: #fff;
 }
 
 /* -------------------------------------------------------
@@ -50,14 +52,13 @@ a:hover {
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* distribute sub-containers horizontally */
+  justify-content: space-between;
   padding: 1rem;
-  color: #fff;
+  background-color: #000;  /* Black header */
+  color: #fff;             /* White text by default in header */
   position: relative;
-  /* background-color: #003366;  <-- Removed so it doesn't span entire header */
 }
 
-/* Sub-containers for left, center, right */
 .header-left,
 .header-center,
 .header-right {
@@ -71,8 +72,7 @@ header {
   width: auto;
 }
 
-/* Middle container for nav
-   No background color here so it remains transparent. */
+/* Middle container for nav */
 .header-center {
   flex: 1;
   justify-content: center;
@@ -80,12 +80,12 @@ header {
   align-items: center;
 }
 
-/* The .nav-bar-bg class to apply the blue behind nav only */
+/* The .nav-bar-bg applies the black behind nav links */
 .nav-bar-bg {
-  background-color: #003366;
-  padding: 0.5rem 1rem;   /* Adjust to control bar's height & width */
-  border-radius: 4px;     /* Optional for rounded corners */
-  display: flex;          /* Ensure the nav items line up properly */
+  background-color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: flex;
   align-items: center;
 }
 
@@ -96,41 +96,38 @@ header {
   gap: 1rem;
 }
 
-/* Nav links remain white so they're visible on the blue background */
+/* Nav links in gold; underline for active */
 #navbar a {
-  color: #fff;
+  color: #FFD700;
   font-weight: 500;
   text-decoration: none;
 }
 #navbar a:hover {
-  text-decoration: underline;
+  color: #fff;
 }
-
 .active {
   text-decoration: underline;
 }
 
-/* Right container for the 3 icons + Spenn Lab logo */
+/* Right container for the lab logo or icons */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 0.75rem; /* space between the icons and the final logo */
+  gap: 0.75rem;
 }
 
-/* The 3 extra icons (AI, hardware, security) on the right side */
+/* Logos */
 .header-icon {
   height: 40px;
   width: auto;
   border-radius: 10px;
 }
-
-/* The Spenn Lab logo on the far right */
 .right-logo {
   height: 150px;
   width: auto;
 }
 
-/* Hamburger toggle (hidden by default) */
+/* Hamburger toggle (mobile) */
 .nav-toggle {
   display: none;
   background: transparent;
@@ -149,14 +146,15 @@ main {
   padding: 0 1rem;
 }
 
+/* Basic card styling for info boxes, etc. */
 .info-card {
-  background-color: #fff;
+  background-color: #111;  /* Dark gray so it stands out from pure black */
+  color: #fff;
   padding: 1.5rem;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
   margin-bottom: 2rem;
 }
-
 .intro {
   margin: 2rem 0;
 }
@@ -164,9 +162,10 @@ main {
 /* -------------------------------------------------------
    5) Hero Sections
 --------------------------------------------------------- */
+/* All hero sections: gold background, black text */
 .hero {
-  background-color: #007acc;
-  color: #fff;
+  background-color: #FFD700; /* Gold background */
+  color: #000;               /* Black text for strong contrast */
   padding: 3rem 1rem;
   margin-bottom: 2rem;
   border-radius: 6px;
@@ -177,22 +176,12 @@ main {
   align-items: center;
 }
 
-.home-hero { /* custom or blank for now */ }
-.research-hero {
-  background-color: #005c99; /* slightly darker for research pages */
-}
+/* Custom hero classes (reuse same color palette) */
+.home-hero { /* uses gold background from .hero */ }
+.research-hero { /* uses gold background from .hero */ }
+.teaching-hero { /* uses gold background from .hero */ }
 
-.teaching-hero .spenn-lab-logo {
-  width: 100px;
-  height: auto;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-.research-hero .spenn-lab-logo {
-  width: 150px;
-  height: auto;
-}
-
+/* Hero content styling */
 .hero-content {
   max-width: 600px;
   text-align: center;
@@ -207,13 +196,13 @@ main {
 .headline {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: #fff;
+  color: #000;
 }
 .sub-headline {
   font-size: 1.2rem;
   font-weight: 400;
   margin-bottom: 1rem;
-  color: #eee;
+  color: #333;
 }
 .hero-text {
   max-width: 600px;
@@ -227,24 +216,24 @@ main {
 .cta-button {
   display: inline-block;
   margin: 0.5rem 0.5rem 0 0;
-  background-color: #fff;
-  color: #007acc;
+  background-color: #fff;    /* White background */
+  color: #000;              /* Black text */
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
 }
 .cta-button:hover {
-  background-color: #ffd700;
-  color: #000;
+  background-color: #000;    /* Invert on hover */
+  color: #FFD700;
 }
 .secondary-cta {
   background-color: #eee;
   color: #333;
 }
 .secondary-cta:hover {
-  background-color: #ffd700;
-  color: #000;
+  background-color: #000;
+  color: #FFD700;
 }
 
 /* -------------------------------------------------------
@@ -254,9 +243,9 @@ main {
   margin-bottom: 2rem;
   text-align: center;
 }
-
 .page-title h1 {
   margin-bottom: 0.5rem;
+  color: #FFD700;
 }
 
 .updates-list article {
@@ -264,13 +253,13 @@ main {
 }
 .updates-list article h2 {
   margin-bottom: 0.25rem;
-  color: #007acc;
+  color: #FFD700;
   font-size: 1.1rem;
 }
 
-/* Example highlight card (left border) */
+/* Example highlight card (left border gold) */
 .highlights-card {
-  border-left: 4px solid #007acc;
+  border-left: 4px solid #FFD700;
   padding-left: 1rem;
 }
 
@@ -285,20 +274,23 @@ main {
   margin: 0.5rem auto 1rem;
   line-height: 1.4;
   text-align: center;
+  color: #fff;
 }
+
 .interests-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
+
 .interests-card {
-  background-color: #fff;
+  background-color: #111;
   padding: 1rem;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
 }
 .interests-card h3 {
-  color: #003366;
+  color: #FFD700;
   margin-bottom: 0.5rem;
 }
 .interests-card ul {
@@ -306,31 +298,34 @@ main {
   margin-bottom: 0;
   list-style: disc;
 }
+
 .publications-section {
   margin-bottom: 2rem;
 }
 .publications-section h2 {
-  color: #003366;
+  color: #FFD700;
   margin-bottom: 0.5rem;
   text-align: center;
 }
+
 .pub-cards {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 1.5rem;
   margin-top: 1rem;
 }
+
 .pub-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #111;
+  border: 1px solid #333;
   padding: 1rem;
   border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.05);
 }
 .pub-card h3 {
   margin-bottom: 0.3rem;
   font-size: 1.1rem;
-  color: #007acc;
+  color: #FFD700;
 }
 .pub-card p {
   margin-bottom: 0.5rem;
@@ -338,7 +333,7 @@ main {
 }
 .citation-metrics h2 {
   margin-top: 0;
-  color: #003366;
+  color: #FFD700;
 }
 
 /* -------------------------------------------------------
@@ -348,7 +343,7 @@ main {
   margin-bottom: 2rem;
 }
 .course-level h3 {
-  color: #003366;
+  color: #FFD700;
   margin-bottom: 1rem;
 }
 .course-grid {
@@ -358,11 +353,11 @@ main {
   margin-bottom: 1rem;
 }
 .course-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #111;
+  border: 1px solid #333;
   border-radius: 6px;
   padding: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
 }
 .course-icon {
   width: 100%;
@@ -373,11 +368,11 @@ main {
 }
 .course-card h4 {
   margin-bottom: 0.5rem;
-  color: #007acc;
+  color: #FFD700;
 }
 
 /* -------------------------------------------------------
-   10) Supervisor Info on Home Page (If used)
+   10) Supervisor Info on Home Page
 --------------------------------------------------------- */
 .supervisor-combined {
   display: flex;
@@ -397,39 +392,36 @@ main {
   width: 100%;
   height: auto;
   border-radius: 4px;
-  border: 2px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  border: 2px solid #333;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
   margin-top: 1rem;
 }
 
 /* -------------------------------------------------------
-   11) Team Page – KEY CHANGES for 2-column layout
+   11) Team Page
 --------------------------------------------------------- */
 .team-group {
   margin-bottom: 2rem;
 }
 .team-group h3 {
-  color: #003366;
+  color: #FFD700;
   margin-bottom: 1rem;
 }
-
-/* Replaced flex with a 2-column grid for .team-cards */
+/* 2-column layout for team cards */
 .team-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* exactly 2 columns on larger screens */
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
-/* .team-card is each grid item */
 .team-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #111;
+  border: 1px solid #333;
   border-radius: 6px;
   padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
 }
 
-/* For side-by-side layout inside each card (image left, text right) */
 .team-card.detailed-profile {
   display: flex;
   gap: 1rem;
@@ -439,8 +431,8 @@ main {
   max-width: 130px;
   height: auto;
   border-radius: 4px;
-  border: 2px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  border: 2px solid #333;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
 }
 .team-card.detailed-profile .profile-info {
   flex: 1;
@@ -449,7 +441,7 @@ main {
 /* Force single column on smaller screens */
 @media (max-width: 768px) {
   .team-cards {
-    grid-template-columns: 1fr; /* 1 column on small screens */
+    grid-template-columns: 1fr;
   }
 }
 
@@ -459,8 +451,8 @@ main {
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #003366;
-  color: #fff;
+  background-color: #000;
+  color: #FFD700;
   margin-top: 2rem;
 }
 
@@ -468,7 +460,6 @@ footer {
    13) Responsive (Mobile)
 --------------------------------------------------------- */
 @media (max-width: 768px) {
-  /* Let header wrap on small screens */
   header {
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -491,14 +482,13 @@ footer {
   }
   #navbar ul {
     flex-direction: column;
-    background-color: #003366; /* still needed for the toggled menu on mobile */
+    background-color: #000; /* Black for mobile menu too */
     display: none;
     padding: 1rem;
   }
   #navbar ul.showNav {
     display: block;
   }
-
   /* Hero section stacks */
   .hero {
     flex-direction: column;
@@ -511,16 +501,12 @@ footer {
     text-align: center;
     max-width: 100%;
   }
-
-  /* The .team-cards grid is overridden above to 1 column,
-     but other layouts also adapt. */
+  /* Single column for course grids, interests, etc. */
   .course-grid,
   .interests-grid,
   .pub-cards {
     grid-template-columns: 1fr;
   }
-
-  /* Supervisor combos stack */
   .supervisor-combined {
     flex-direction: column;
     align-items: center;
@@ -539,37 +525,37 @@ footer {
   gap: 0.5rem;
   margin: 1rem 0;
   list-style: none;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #FFD700;
 }
-
-/* Each clickable tab link */
 .tab-link {
   padding: 0.5rem 1rem;
-  background-color: #eee;
-  border: 1px solid #ddd;
+  background-color: #111; /* matches site’s dark theme */
+  border: 1px solid #333;
   border-bottom: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  color: #fff;
 }
 .tab-link:hover {
-  background-color: #ddd;
+  background-color: #222;
 }
 .tab-link.active {
-  background-color: #fff;
-  border-bottom: 2px solid #fff;
+  background-color: #000;
+  border-bottom: 2px solid #000;
   font-weight: bold;
+  color: #FFD700;
 }
-
-/* Tab content containers are hidden by default */
+/* Tab content containers */
 .tab-content {
   display: none;
   padding: 1rem;
-  border: 1px solid #ddd;
+  background-color: #111;
+  border: 1px solid #333;
   border-top: none;
+  color: #fff;
 }
 .tab-content.active {
   display: block;
-  background-color: #fff;
 }
 
 /* -------------------------------------------------------
@@ -580,17 +566,11 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  background-color: #003366;
+  background-color: #000;   /* Black for icon strip */
   padding: 1rem 0;
 }
 .icon-strip img {
   height: 250px;
   width: auto;
   border-radius: 4px;
-}
-
-/* Center just the heading and intro text */
-.research-interests h2,
-.research-interests .interests-intro {
-  text-align: center;
 }
