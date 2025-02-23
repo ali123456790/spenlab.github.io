@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- Header (Left–Center–Right Layout) -->
+  <!-- Header -->
   <header>
     <div class="header-left">
       <img src="images/2.png" alt="Southern Miss Logo" class="left-logo" />
@@ -33,14 +33,14 @@
     </div>
   </header>
 
-  <!-- NEW: Icon strip under the header -->
+  <!-- Icon strip -->
   <section class="icon-strip">
     <img src="images/AI.png" alt="AI Icon" />
     <img src="images/Hardware.png" alt="Hardware Icon" />
     <img src="images/Security.png" alt="Security Icon" />
   </section>
 
-  <!-- Hero / Title Section -->
+  <!-- Hero Section -->
   <section class="hero research-hero">
     <div class="hero-text">
       <h1>Research Interests & Publications</h1>
@@ -121,7 +121,6 @@
         <ol>
           <li>First Journal Paper Title</li>
           <li>Second Journal Paper Title</li>
-          <!-- Add more as needed -->
         </ol>
       </div>
 
@@ -132,18 +131,16 @@
         <ol>
           <li>First Conference Paper Title</li>
           <li>Second Conference Paper Title</li>
-          <!-- Add more as needed -->
         </ol>
       </div>
 
-      <!-- Tab Content #3: Conferences (labeled as "Books & Book Chapters" originally) -->
+      <!-- Tab Content #3: Conferences -->
       <div id="books-tab" class="tab-content">
         <h3>Conferences</h3>
         <p><strong>*my MSc Student, **PhD Student, etc.</strong></p>
         <ol>
           <li>First Book Chapter Title</li>
           <li>Second Book Chapter Title</li>
-          <!-- Add more as needed -->
         </ol>
       </div>
     </section>
@@ -153,7 +150,7 @@
     <p>&copy; <span id="year"></span> Spen Lab. All rights reserved.</p>
   </footer>
 
-  <!-- Minimal inline JS to toggle tabs -->
+  <!-- Minimal inline JS to toggle publication tabs -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const tabLinks = document.querySelectorAll('.tab-link');
@@ -176,6 +173,8 @@
       });
     });
   </script>
+
+  <!-- Script for nav toggle (if you want the hamburger on wide screens) -->
   <script src="js/script.js"></script>
 </body>
 </html>
