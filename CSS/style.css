@@ -1,5 +1,5 @@
 /* -------------------------------------------------------
-   1) Basic CSS Reset
+   1) Basic Reset
 --------------------------------------------------------- */
 * {
   margin: 0;
@@ -29,35 +29,23 @@ a {
   color: #007acc;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
 
-/* Optional highlight class for special emphasis links */
-.link-highlight {
-  font-weight: bold;
-  color: #007acc;
-  text-decoration: none;
-}
-.link-highlight:hover {
-  text-decoration: underline;
-}
-
 /* -------------------------------------------------------
-   3) Header & Navigation (Left–Center–Right)
+   3) Header & Navigation
 --------------------------------------------------------- */
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* distribute sub-containers horizontally */
+  justify-content: space-between;
+  background-color: #003366;
   padding: 1rem;
   color: #fff;
   position: relative;
-  /* background-color: #003366;  <-- Removed so it doesn't span entire header */
 }
 
-/* Sub-containers for left, center, right */
 .header-left,
 .header-center,
 .header-right {
@@ -65,43 +53,28 @@ header {
   align-items: center;
 }
 
-/* Left logo (Southern Miss) */
 .left-logo {
-  height: 150px;
+  height: 80px;
   width: auto;
 }
 
-/* Middle container for nav
-   No background color here so it remains transparent. */
 .header-center {
   flex: 1;
   justify-content: center;
-  display: flex;
-  align-items: center;
 }
 
-/* The .nav-bar-bg class to apply the blue behind nav only */
-.nav-bar-bg {
-  background-color: #003366;
-  padding: 0.5rem 1rem;   /* Adjust to control bar's height & width */
-  border-radius: 4px;     /* Optional for rounded corners */
-  display: flex;          /* Ensure the nav items line up properly */
-  align-items: center;
-}
-
-/* Nav UL styling */
 #navbar ul {
   list-style: none;
   display: flex;
   gap: 1rem;
 }
 
-/* Nav links remain white so they're visible on the blue background */
 #navbar a {
   color: #fff;
   font-weight: 500;
   text-decoration: none;
 }
+
 #navbar a:hover {
   text-decoration: underline;
 }
@@ -110,27 +83,12 @@ header {
   text-decoration: underline;
 }
 
-/* Right container for the 3 icons + Spenn Lab logo */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem; /* space between the icons and the final logo */
-}
-
-/* The 3 extra icons (AI, hardware, security) on the right side */
-.header-icon {
-  height: 40px;
-  width: auto;
-  border-radius: 10px;
-}
-
-/* The Spenn Lab logo on the far right */
 .right-logo {
-  height: 150px;
+  height: 80px;
   width: auto;
 }
 
-/* Hamburger toggle (hidden by default) */
+/* Hamburger toggle (hidden on desktop) */
 .nav-toggle {
   display: none;
   background: transparent;
@@ -141,28 +99,25 @@ header {
 }
 
 /* -------------------------------------------------------
-   4) General Layout
+   4) Icon Strip
 --------------------------------------------------------- */
-main {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+.icon-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: #003366;
+  padding: 1rem 0;
 }
 
-.info-card {
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
-  margin-bottom: 2rem;
-}
-
-.intro {
-  margin: 2rem 0;
+.icon-strip img {
+  height: 200px;
+  width: auto;
+  border-radius: 4px;
 }
 
 /* -------------------------------------------------------
-   5) Hero Sections
+   5) Hero Section
 --------------------------------------------------------- */
 .hero {
   background-color: #007acc;
@@ -177,53 +132,19 @@ main {
   align-items: center;
 }
 
-.home-hero { /* custom or blank for now */ }
-.research-hero {
-  background-color: #005c99; /* slightly darker for research pages */
-}
-
-.teaching-hero .spenn-lab-logo {
-  width: 100px;
-  height: auto;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-.research-hero .spenn-lab-logo {
-  width: 150px;
-  height: auto;
-}
-
 .hero-content {
   max-width: 600px;
   text-align: center;
 }
+
 .hero-content p {
   margin-bottom: 1rem;
 }
+
 .hero-buttons {
   margin-top: 1rem;
 }
 
-.headline {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
-}
-.sub-headline {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  color: #eee;
-}
-.hero-text {
-  max-width: 600px;
-  text-align: left;
-  margin-bottom: 1rem;
-}
-
-/* -------------------------------------------------------
-   6) Buttons
---------------------------------------------------------- */
 .cta-button {
   display: inline-block;
   margin: 0.5rem 0.5rem 0 0;
@@ -247,214 +168,41 @@ main {
   color: #000;
 }
 
-/* -------------------------------------------------------
-   7) Updates & Article Lists
---------------------------------------------------------- */
-.page-title {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.page-title h1 {
+.headline {
+  font-size: 2rem;
   margin-bottom: 0.5rem;
+  color: #fff;
 }
-
-.updates-list article {
-  margin-bottom: 1.5rem;
-}
-.updates-list article h2 {
-  margin-bottom: 0.25rem;
-  color: #007acc;
-  font-size: 1.1rem;
-}
-
-/* Example highlight card (left border) */
-.highlights-card {
-  border-left: 4px solid #007acc;
-  padding-left: 1rem;
-}
-
-/* -------------------------------------------------------
-   8) Research Interests & Publications
---------------------------------------------------------- */
-.research-interests {
-  margin-bottom: 2rem;
-}
-.interests-intro {
-  max-width: 700px;
-  margin: 0.5rem auto 1rem;
-  line-height: 1.4;
-  text-align: center;
-}
-.interests-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-.interests-card {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-.interests-card h3 {
-  color: #003366;
-  margin-bottom: 0.5rem;
-}
-.interests-card ul {
-  margin-left: 1.2rem;
-  margin-bottom: 0;
-  list-style: disc;
-}
-.publications-section {
-  margin-bottom: 2rem;
-}
-.publications-section h2 {
-  color: #003366;
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
-.pub-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 1.5rem;
-  margin-top: 1rem;
-}
-.pub-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-.pub-card h3 {
-  margin-bottom: 0.3rem;
-  font-size: 1.1rem;
-  color: #007acc;
-}
-.pub-card p {
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-}
-.citation-metrics h2 {
-  margin-top: 0;
-  color: #003366;
-}
-
-/* -------------------------------------------------------
-   9) Teaching Page: Course Cards
---------------------------------------------------------- */
-.course-level {
-  margin-bottom: 2rem;
-}
-.course-level h3 {
-  color: #003366;
+.sub-headline {
+  font-size: 1.2rem;
+  font-weight: 400;
   margin-bottom: 1rem;
+  color: #eee;
 }
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 1rem;
+
+/* -------------------------------------------------------
+   6) Main Content
+--------------------------------------------------------- */
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
-.course-card {
+
+.info-card {
   background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
   padding: 1.5rem;
+  border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.07);
-}
-.course-icon {
-  width: 100%;
-  height: auto;
-  max-height: 180px;
-  object-fit: contain;
-  margin-bottom: 0.5rem;
-}
-.course-card h4 {
-  margin-bottom: 0.5rem;
-  color: #007acc;
-}
-
-/* -------------------------------------------------------
-   10) Supervisor Info on Home Page (If used)
---------------------------------------------------------- */
-.supervisor-combined {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-.supervisor-details {
-  flex: 1 1 55%;
-  min-width: 250px;
-}
-.supervisor-photo-column {
-  flex: 0 0 250px;
-  text-align: center;
-}
-.professor-photo-large {
-  max-width: 200px;
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  border: 2px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
-  margin-top: 1rem;
-}
-
-/* -------------------------------------------------------
-   11) Team Page – KEY CHANGES for 2-column layout
---------------------------------------------------------- */
-.team-group {
   margin-bottom: 2rem;
 }
-.team-group h3 {
-  color: #003366;
-  margin-bottom: 1rem;
-}
 
-/* Replaced flex with a 2-column grid for .team-cards */
-.team-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* exactly 2 columns on larger screens */
-  gap: 1.5rem;
-}
-
-/* .team-card is each grid item */
-.team-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
-}
-
-/* For side-by-side layout inside each card (image left, text right) */
-.team-card.detailed-profile {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-}
-.team-card.detailed-profile img {
-  max-width: 130px;
-  height: auto;
-  border-radius: 4px;
-  border: 2px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
-}
-.team-card.detailed-profile .profile-info {
-  flex: 1;
-}
-
-/* Force single column on smaller screens */
-@media (max-width: 768px) {
-  .team-cards {
-    grid-template-columns: 1fr; /* 1 column on small screens */
-  }
+.intro {
+  margin: 2rem 0;
 }
 
 /* -------------------------------------------------------
-   12) Footer
+   7) Footer
 --------------------------------------------------------- */
 footer {
   text-align: center;
@@ -465,10 +213,9 @@ footer {
 }
 
 /* -------------------------------------------------------
-   13) Responsive (Mobile)
+   8) Responsive (Mobile)
 --------------------------------------------------------- */
 @media (max-width: 768px) {
-  /* Let header wrap on small screens */
   header {
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -489,17 +236,16 @@ footer {
     display: block;
     margin-right: 0.5rem;
   }
+  /* Hide the desktop nav; toggle it via the hamburger */
   #navbar ul {
-    flex-direction: column;
-    background-color: #003366; /* still needed for the toggled menu on mobile */
     display: none;
+    flex-direction: column;
+    background-color: #003366;
     padding: 1rem;
   }
   #navbar ul.showNav {
     display: block;
   }
-
-  /* Hero section stacks */
   .hero {
     flex-direction: column;
     text-align: center;
@@ -507,90 +253,19 @@ footer {
   .hero-content {
     max-width: 100%;
   }
-  .hero-text {
-    text-align: center;
-    max-width: 100%;
-  }
-
-  /* The .team-cards grid is overridden above to 1 column,
-     but other layouts also adapt. */
-  .course-grid,
-  .interests-grid,
-  .pub-cards {
-    grid-template-columns: 1fr;
-  }
-
-  /* Supervisor combos stack */
-  .supervisor-combined {
-    flex-direction: column;
-    align-items: center;
-  }
-  .supervisor-details,
-  .supervisor-photo-column {
-    width: 100%;
+  .icon-strip img {
+    height: 120px;
   }
 }
 
-/* -------------------------------------------------------
-   14) Tab List for Research Page
---------------------------------------------------------- */
-.tab-list {
-  display: flex;
-  gap: 0.5rem;
-  margin: 1rem 0;
-  list-style: none;
-  border-bottom: 2px solid #ddd;
-}
-
-/* Each clickable tab link */
-.tab-link {
-  padding: 0.5rem 1rem;
-  background-color: #eee;
-  border: 1px solid #ddd;
-  border-bottom: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.tab-link:hover {
-  background-color: #ddd;
-}
-.tab-link.active {
-  background-color: #fff;
-  border-bottom: 2px solid #fff;
-  font-weight: bold;
-}
-
-/* Tab content containers are hidden by default */
-.tab-content {
-  display: none;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-top: none;
-}
-.tab-content.active {
-  display: block;
-  background-color: #fff;
-}
-
-/* -------------------------------------------------------
-   15) Icon Strip
---------------------------------------------------------- */
-.icon-strip {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  background-color: #003366;
-  padding: 1rem 0;
-}
-.icon-strip img {
-  height: 250px;
-  width: auto;
-  border-radius: 4px;
-}
-
-/* Center just the heading and intro text */
-.research-interests h2,
-.research-interests .interests-intro {
-  text-align: center;
+@media (max-width: 480px) {
+  .headline {
+    font-size: 1.6rem;
+  }
+  .sub-headline {
+    font-size: 1rem;
+  }
+  .icon-strip img {
+    height: 100px;
+  }
 }
