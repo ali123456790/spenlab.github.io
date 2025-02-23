@@ -50,11 +50,10 @@ a:hover {
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* distribute sub-containers horizontally */
+  justify-content: space-between;
   padding: 1rem;
   color: #fff;
   position: relative;
-  /* background-color: #003366;  <-- Removed so it doesn't span entire header */
 }
 
 /* Sub-containers for left, center, right */
@@ -71,8 +70,7 @@ header {
   width: auto;
 }
 
-/* Middle container for nav
-   No background color here so it remains transparent. */
+/* Middle container for nav */
 .header-center {
   flex: 1;
   justify-content: center;
@@ -83,9 +81,9 @@ header {
 /* The .nav-bar-bg class to apply the blue behind nav only */
 .nav-bar-bg {
   background-color: #003366;
-  padding: 0.5rem 1rem;   /* Adjust to control bar's height & width */
-  border-radius: 4px;     /* Optional for rounded corners */
-  display: flex;          /* Ensure the nav items line up properly */
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: flex;
   align-items: center;
 }
 
@@ -110,21 +108,7 @@ header {
   text-decoration: underline;
 }
 
-/* Right container for the 3 icons + Spenn Lab logo */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem; /* space between the icons and the final logo */
-}
-
-/* The 3 extra icons (AI, hardware, security) on the right side */
-.header-icon {
-  height: 40px;
-  width: auto;
-  border-radius: 10px;
-}
-
-/* The Spenn Lab logo on the far right */
+/* Right container for Spenn Lab logo */
 .right-logo {
   height: 150px;
   width: auto;
@@ -177,9 +161,9 @@ main {
   align-items: center;
 }
 
-.home-hero { /* custom or blank for now */ }
+.home-hero { }
 .research-hero {
-  background-color: #005c99; /* slightly darker for research pages */
+  background-color: #005c99;
 }
 
 .teaching-hero .spenn-lab-logo {
@@ -199,21 +183,6 @@ main {
 }
 .hero-content p {
   margin-bottom: 1rem;
-}
-.hero-buttons {
-  margin-top: 1rem;
-}
-
-.headline {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
-}
-.sub-headline {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  color: #eee;
 }
 .hero-text {
   max-width: 600px;
@@ -254,11 +223,9 @@ main {
   margin-bottom: 2rem;
   text-align: center;
 }
-
 .page-title h1 {
   margin-bottom: 0.5rem;
 }
-
 .updates-list article {
   margin-bottom: 1.5rem;
 }
@@ -266,12 +233,6 @@ main {
   margin-bottom: 0.25rem;
   color: #007acc;
   font-size: 1.1rem;
-}
-
-/* Example highlight card (left border) */
-.highlights-card {
-  border-left: 4px solid #007acc;
-  padding-left: 1rem;
 }
 
 /* -------------------------------------------------------
@@ -314,31 +275,38 @@ main {
   margin-bottom: 0.5rem;
   text-align: center;
 }
-.pub-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 1.5rem;
-  margin-top: 1rem;
+.tab-list {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  list-style: none;
+  border-bottom: 2px solid #ddd;
 }
-.pub-card {
-  background-color: #fff;
+.tab-link {
+  padding: 0.5rem 1rem;
+  background-color: #eee;
   border: 1px solid #ddd;
+  border-bottom: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.tab-link:hover {
+  background-color: #ddd;
+}
+.tab-link.active {
+  background-color: #fff;
+  border-bottom: 2px solid #fff;
+  font-weight: bold;
+}
+.tab-content {
+  display: none;
   padding: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid #ddd;
+  border-top: none;
 }
-.pub-card h3 {
-  margin-bottom: 0.3rem;
-  font-size: 1.1rem;
-  color: #007acc;
-}
-.pub-card p {
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-}
-.citation-metrics h2 {
-  margin-top: 0;
-  color: #003366;
+.tab-content.active {
+  display: block;
+  background-color: #fff;
 }
 
 /* -------------------------------------------------------
@@ -377,20 +345,21 @@ main {
 }
 
 /* -------------------------------------------------------
-   10) Supervisor Info on Home Page (If used)
+   10) Supervisor Info
 --------------------------------------------------------- */
-.supervisor-combined {
+.supervisor-hero {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 1.5rem;
+  background-color: #007acc;
+  color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 2rem;
 }
-.supervisor-details {
-  flex: 1 1 55%;
-  min-width: 250px;
-}
-.supervisor-photo-column {
-  flex: 0 0 250px;
-  text-align: center;
+.supervisor-text {
+  max-width: 600px;
 }
 .professor-photo-large {
   max-width: 200px;
@@ -399,11 +368,10 @@ main {
   border-radius: 4px;
   border: 2px solid #ddd;
   box-shadow: 0 2px 5px rgba(0,0,0,0.07);
-  margin-top: 1rem;
 }
 
 /* -------------------------------------------------------
-   11) Team Page – KEY CHANGES for 2-column layout
+   11) Team Page
 --------------------------------------------------------- */
 .team-group {
   margin-bottom: 2rem;
@@ -412,15 +380,11 @@ main {
   color: #003366;
   margin-bottom: 1rem;
 }
-
-/* Replaced flex with a 2-column grid for .team-cards */
 .team-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* exactly 2 columns on larger screens */
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
-
-/* .team-card is each grid item */
 .team-card {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -428,8 +392,6 @@ main {
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.07);
 }
-
-/* For side-by-side layout inside each card (image left, text right) */
 .team-card.detailed-profile {
   display: flex;
   gap: 1rem;
@@ -444,13 +406,6 @@ main {
 }
 .team-card.detailed-profile .profile-info {
   flex: 1;
-}
-
-/* Force single column on smaller screens */
-@media (max-width: 768px) {
-  .team-cards {
-    grid-template-columns: 1fr; /* 1 column on small screens */
-  }
 }
 
 /* -------------------------------------------------------
@@ -491,7 +446,7 @@ footer {
   }
   #navbar ul {
     flex-direction: column;
-    background-color: #003366; /* still needed for the toggled menu on mobile */
+    background-color: #003366;
     display: none;
     padding: 1rem;
   }
@@ -499,98 +454,47 @@ footer {
     display: block;
   }
 
+  /* Make the left and right logos smaller on mobile */
+  .left-logo, .right-logo {
+    height: 90px;
+  }
+
   /* Hero section stacks */
   .hero {
     flex-direction: column;
     text-align: center;
-  }
-  .hero-content {
-    max-width: 100%;
   }
   .hero-text {
     text-align: center;
     max-width: 100%;
   }
 
-  /* The .team-cards grid is overridden above to 1 column,
-     but other layouts also adapt. */
+  /* The .team-cards grid becomes single-column */
+  .team-cards {
+    grid-template-columns: 1fr;
+  }
   .course-grid,
-  .interests-grid,
-  .pub-cards {
+  .interests-grid {
     grid-template-columns: 1fr;
   }
 
   /* Supervisor combos stack */
-  .supervisor-combined {
+  .supervisor-hero {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
   }
-  .supervisor-details,
-  .supervisor-photo-column {
-    width: 100%;
+  .supervisor-text {
+    text-align: center;
+    max-width: 100%;
   }
 }
 
 /* -------------------------------------------------------
-   14) Tab List for Research Page
+   14) Additional Tweak for .icon-strip on Mobile
 --------------------------------------------------------- */
-.tab-list {
-  display: flex;
-  gap: 0.5rem;
-  margin: 1rem 0;
-  list-style: none;
-  border-bottom: 2px solid #ddd;
-}
-
-/* Each clickable tab link */
-.tab-link {
-  padding: 0.5rem 1rem;
-  background-color: #eee;
-  border: 1px solid #ddd;
-  border-bottom: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.tab-link:hover {
-  background-color: #ddd;
-}
-.tab-link.active {
-  background-color: #fff;
-  border-bottom: 2px solid #fff;
-  font-weight: bold;
-}
-
-/* Tab content containers are hidden by default */
-.tab-content {
-  display: none;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-top: none;
-}
-.tab-content.active {
-  display: block;
-  background-color: #fff;
-}
-
-/* -------------------------------------------------------
-   15) Icon Strip
---------------------------------------------------------- */
-.icon-strip {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  background-color: #003366;
-  padding: 1rem 0;
-}
-.icon-strip img {
-  height: 250px;
-  width: auto;
-  border-radius: 4px;
-}
-
-/* Center just the heading and intro text */
-.research-interests h2,
-.research-interests .interests-intro {
-  text-align: center;
+@media (max-width: 768px) {
+  .icon-strip img {
+    /* Scale these down on smaller screens */
+    height: 120px;
+  }
 }
