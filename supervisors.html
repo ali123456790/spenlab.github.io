@@ -3,137 +3,297 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Spen Lab – Supervisors</title>
+  <title>Spenn Lab – Teaching</title>
   <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
 
-  <!-- Header / Navigation -->
+  <!-- Header: Three-Column Layout with nav-bar-bg -->
   <header>
-    <img src="images/2.png" alt="College Logo" class="college-logo" />
+    <!-- Left: Southern Miss Logo -->
+    <div class="header-left">
+      <img src="images/2.png" alt="Southern Miss Logo" class="left-logo" />
+    </div>
+
+    <!-- Center: Navigation -->
     <div class="header-center">
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <!-- IMPORTANT: nav-bar-bg class ensures a visible background for the nav -->
       <nav id="navbar" class="nav-bar-bg">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="updates.html">Recent Updates</a></li>
-          <li><a href="research.html">Research & Publications</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="supervisors.html" class="active">Supervisors</a></li>
+          <li><a href="research.html">Research &amp; Publications</a></li>
+          <!-- 'Teaching' is active on this page -->
+          <li><a href="teaching.html" class="active">Teaching</a></li>
+          <li><a href="service.html">Service</a></li>
           <li><a href="team.html">Team</a></li>
         </ul>
       </nav>
     </div>
+
+    <!-- Right: Spenn Lab Logo -->
+    <div class="header-right">
+      <img src="images/logo.png" alt="Spenn Lab Logo" class="right-logo" />
+    </div>
   </header>
 
+  <!-- Icon strip (AI, Hardware, Security) -->
+  <section class="icon-strip">
+    <img src="images/AI.png" alt="AI Icon" />
+    <img src="images/Hardware.png" alt="Hardware Icon" />
+    <img src="images/Security.png" alt="Security Icon" />
+  </section>
+
+  <!-- Hero Section -->
+  <section class="hero teaching-hero">
+    <div class="hero-text">
+      <h1>Teaching</h1>
+      <p>
+        Dr. Ahmed Sherif’s teaching covers a variety of Computer Engineering and Computer Science courses.
+      </p>
+    </div>
+  </section>
+
   <main>
-    <!-- Page Title -->
-    <section class="page-title supervisors-title">
-      <h1>Supervisors</h1>
-      <p>Meet Our Lead Academic Supervisor</p>
+    <!-- Teaching Philosophy -->
+    <section class="info-card">
+      <h2>Teaching Philosophy</h2>
+      <p>
+        Dr. Ahmed Sherif’s teaching philosophy is grounded in practical, hands-on learning
+        that prepares students for real-world challenges in computer science and engineering.
+        By combining theoretical instruction with project-based activities, Dr. Sherif
+        encourages critical thinking, collaboration, and a mindset of continual innovation.
+      </p>
     </section>
 
-    <!-- Dr. Sherif Hero / Intro Section -->
-    <section class="supervisor-hero">
-      <div class="supervisor-text">
-        <h2>Dr. Ahmed Sherif, Senior Member, IEEE</h2>
-        <h3>
-          Associate Professor, School of Computing Sciences &amp; Computer Engineering,
-          <br />
-          University of Southern Mississippi (USM)
-        </h3>
-        <p>
-          Dr. Ahmed Sherif is the driving force behind Spen  Lab’s research initiatives.
-          As the founder and director of the Security and Privacy of Emerging Networks
-          (SPEN) Research Lab at USM, he leads a diverse team of graduate and undergraduate
-          students in pioneering research across several cutting-edge fields.
-        </p>
+    <!-- Courses by Level Introduction -->
+    <section class="intro">
+      <h2>Courses by Level</h2>
+      <p>
+        Below is an overview of courses taught, grouped by level. Each includes a short
+        description and key skill outcomes.
+      </p>
+    </section>
+
+    <!-- Undergraduate Courses -->
+    <section class="course-level">
+      <h3>Undergraduate Courses</h3>
+      <div class="course-grid">
+        <!-- CE 210 – Digital Logic -->
+        <article class="course-card">
+          <img src="images/logic.png" alt="Logic Icon" class="course-icon" />
+          <h4>CE 210 – Digital Logic</h4>
+          <p>
+            <strong>Overview:</strong> Introduces the foundational principles of digital circuits,
+            including logic gates, Boolean algebra, and basic digital system design.
+          </p>
+          <p>
+            <strong>Key Skills:</strong> Logic analysis, circuit troubleshooting,
+            hardware design fundamentals
+          </p>
+        </article>
+
+        <!-- CE 350 – Wireless and Network Security -->
+        <article class="course-card">
+          <img src="images/Security Icon.png" alt="Security Icon" class="course-icon" />
+          <h4>CE 350 – Wireless and Network Security</h4>
+          <p>
+            <strong>Overview:</strong> Covers fundamental and advanced security techniques
+            for wireless networks, including encryption protocols, intrusion detection, and
+            secure wireless architecture.
+          </p>
+          <p>
+            <strong>Key Skills:</strong> Penetration testing, secure network design,
+            security policy development
+          </p>
+        </article>
+
+        <!-- CE 420/260 – Computer Networks -->
+        <article class="course-card">
+          <img src="images/Networks Icon.png" alt="Networks Icon" class="course-icon" />
+          <h4>CE 420/260 – Computer Networks</h4>
+          <p>
+            <strong>Overview:</strong> Explores concepts in data communication, TCP/IP protocols,
+            routing algorithms, and network architectures.
+          </p>
+          <p>
+            <strong>Key Skills:</strong> Network configuration, protocol troubleshooting,
+            layered networking models
+          </p>
+        </article>
+
+        <!-- CE 450 – Advanced Security and Privacy Techniques -->
+        <article class="course-card">
+          <img src="images/Privacy Icon.png" alt="Privacy Icon" class="course-icon" />
+          <h4>CE 450 – Advanced Security and Privacy Techniques</h4>
+          <p>
+            <strong>Overview:</strong> Delves into cryptographic protocols, access control
+            models, privacy-preserving algorithms, and threat mitigation strategies.
+          </p>
+          <p>
+            <strong>Key Skills:</strong> Secure programming, threat analysis, privacy framework design
+          </p>
+        </article>
+
+        <!-- CE 430 – Senior Design Project -->
+        <article class="course-card">
+          <img src="images/Design Icon.png" alt="Design Icon" class="course-icon" />
+          <h4>CE 430 – Senior Design Project</h4>
+          <p>
+            <strong>Overview:</strong> A capstone course where students collaborate on large-scale
+            design projects, often involving real clients or industry sponsors.
+          </p>
+          <p>
+            <strong>Key Skills:</strong> Project management, team collaboration,
+            professional communication
+          </p>
+        </article>
+
+        <!-- CE 230 – Computer Systems -->
+        <article class="course-card">
+          <img src="images/Computer Systems Icon.png" alt="Computer Systems Icon" class="course-icon" />
+          <h4>CE 230 – Computer Systems</h4>
+          <p>
+            <strong>Overview:</strong> Focuses on operating systems fundamentals, hardware-software
+            interfacing, and performance optimization strategies.
+          </p>
+          <p>
+            <strong>Key Skills:</strong> Systems programming, kernel configuration,
+            resource management
+          </p>
+        </article>
       </div>
-      <!-- Professor Photo -->
-      <img
-        src="images/1.png"
-        alt="Dr. Ahmed Sherif"
-        class="professor-photo-large"
-      />
     </section>
 
-    <!-- Dr. Sherif Detailed Info -->
-    <section class="supervisor-info">
-      <article class="info-card">
-        <h3>Academic and Professional Background</h3>
-        <ul>
-          <li>Ph.D. in Electrical and Computer Engineering – Tennessee Technological University (2017)</li>
-          <li>M.S. – Egypt Japan University of Science &amp; Technology (2014)</li>
-          <li>B.S. – Al Azhar University (2007)</li>
-        </ul>
-        <p>
-          Dr. Sherif’s excellence in research has been recognized with the
-          Aubrey Keith and Ella Ginn Lucas Endowment for Faculty Excellence Award (USM, 2022).
-          He has also secured multiple internal and external grants to support his
-          innovative projects.
-        </p>
-      </article>
+    <!-- Graduate Courses -->
+    <section class="course-level">
+      <h3>Graduate Courses</h3>
+      <div class="course-grid">
+        <!-- COS 781 – Topics in Computational Sciences -->
+        <article class="course-card">
+          <img src="images/Computational Sciences Icon.png" alt="Computational Sciences Icon" class="course-icon" />
+          <h4>COS 781 – Topics in Computational Sciences</h4>
+          <p>
+            <strong>Overview:</strong> Investigates advanced themes in computational modeling,
+            data analytics, and high-performance computing relevant to modern research.
+          </p>
+          <p>
+            <strong>Key Skills:</strong> Research methodology, algorithmic problem-solving,
+            scholarly writing
+          </p>
+        </article>
 
-      <article class="info-card">
-        <h3>Research and Publications</h3>
-        <p>
-          Dr. Sherif’s work has been featured in top-tier IEEE conferences and journals,
-          including:
-        </p>
-        <ul>
-          <li>IEEE International Conference on Communications (IEEE ICC)</li>
-          <li>IEEE Vehicular Technology Conference (IEEE VTC)</li>
-          <li>IEEE Transactions on Dependable and Secure Computing (IEEE TDSC)</li>
-          <li>IEEE Transactions on Vehicular Technology (IEEE TVT)</li>
-          <li>IEEE IoT Journal</li>
-        </ul>
-        <p>
-          In addition to his research, he serves as a reviewer and editor for several
-          prestigious journals and conferences, such as IEEE TVT, IEEE IoT Journal,
-          IEEE TDSC, and the Journal of Peer-to-Peer Networking.
-        </p>
-      </article>
+        <!-- COS 791 – Research in Computational Sciences -->
+        <article class="course-card">
+          <img src="images/Research Icon.png" alt="Research Icon" class="course-icon" />
+          <h4>COS 791 – Research in Computational Sciences</h4>
+          <p>
+            <strong>Overview:</strong> Guides graduate students through designing and conducting
+            independent research projects, honing scholarly communication skills.
+          </p>
+          <p>
+            <strong>Key Skills:</strong> Experimentation, research proposal development,
+            peer-reviewed publication process
+          </p>
+        </article>
 
-      <article class="info-card">
-        <h3>Areas of Expertise</h3>
-        <ul>
-          <li>Cybersecurity and Network Security</li>
-          <li>Machine Learning in Cybersecurity</li>
-          <li>Privacy-Preserving Schemes in Autonomous Vehicles (AVs)</li>
-          <li>Vehicular Ad Hoc Networks (VANETs)</li>
-          <li>Internet of Things (IoT) Applications</li>
-          <li>Smart Grid Advanced Metering Infrastructure (AMI) Networks</li>
-        </ul>
-      </article>
+        <!-- COS 898 – Dissertation -->
+        <article class="course-card">
+          <img src="images/Dissertation Icon.png" alt="Dissertation Icon" class="course-icon" />
+          <h4>COS 898 – Dissertation</h4>
+          <p>
+            <strong>Overview:</strong> Focuses on the planning, execution, and defense of doctoral
+            research. Emphasizes original contributions to the field, rigorous experimentation,
+            and academic writing.
+          </p>
+          <p>
+            <strong>Key Skills:</strong> Independent research, dissertation drafting,
+            conference presentation
+          </p>
+        </article>
 
-      <article class="info-card">
-        <h3>Professional Affiliations</h3>
-        <ul>
-          <li>Senior Member, Institute of Electrical and Electronics Engineers (IEEE)</li>
-        </ul>
-      </article>
+        <!-- CSC 492 – Computer Science Problems I -->
+        <article class="course-card">
+          <img src="images/Problem-Solving Icon.png" alt="Problem-Solving Icon" class="course-icon" />
+          <h4>CSC 492 – Computer Science Problems I</h4>
+          <p>
+            <strong>Overview:</strong> Provides a deep dive into contemporary challenges in
+            computer science, including emerging technologies, novel algorithms, and
+            industry-case problem sets.
+          </p>
+          <p>
+            <strong>Key Skills:</strong> Analytical thinking, advanced programming techniques,
+            system-level problem-solving
+          </p>
+        </article>
 
-      <article class="info-card">
-        <h3>Languages</h3>
-        <ul>
-          <li>Arabic (Native or Bilingual)</li>
-          <li>English (Full Professional)</li>
-        </ul>
-      </article>
+        <!-- CSC 550 – Advanced Security -->
+        <article class="course-card">
+          <img src="images/adv550.png" alt="ADV 550 – Advanced Security" class="course-icon" />
+          <h4>CSC 550 – Advanced Security</h4>
+          <p>
+            <strong>Overview:</strong> Delves into advanced encryption methods such as DSA and AES,
+            focusing on robust security design strategies and hands-on implementation.
+          </p>
+          <p>
+            <strong>Key Skills:</strong> Cryptographic protocol design, secure encryption
+            implementation, advanced threat analysis
+          </p>
+        </article>
 
-      <article class="info-card">
-        <h3>Contact Information</h3>
-        <p>
-          <strong>Office:</strong> Chain Technology Center (TEC) 329, Hattiesburg<br />
-          <strong>Email:</strong>
-          <a href="mailto:Ahmed.Sherif@usm.edu">Ahmed.Sherif@usm.edu</a><br />
-          <strong>Phone:</strong> (601) 000-0000
-        </p>
-      </article>
+        <!-- CSC 650 – Advanced Cryptography -->
+        <article class="course-card">
+          <img src="images/CSC650.png" alt="CSC 650 – Advanced Cryptography" class="course-icon" />
+          <h4>CSC 650 – Advanced Cryptography</h4>
+          <p>
+            <strong>Overview:</strong> A deep dive into modern cryptographic algorithms, key exchange
+            protocols, and privacy-preserving computing with real-world applications.
+          </p>
+          <p>
+            <strong>Key Skills:</strong> Key management, zero-knowledge proofs,
+            quantum-resistant algorithms, secure protocol design
+          </p>
+        </article>
+      </div>
     </section>
+
+    <!-- Student Project Highlights -->
+    <section class="info-card">
+      <h2>Student Project Highlights</h2>
+      <ul>
+        <li>
+          <strong>Secure E-Commerce Application:</strong> Built end-to-end encryption for a mock
+          online marketplace in the “Advanced Security and Privacy Techniques” course.
+        </li>
+        <li>
+          <strong>IoT Greenhouse Monitoring System:</strong> Created an IoT-based, real-time sensor
+          network for energy efficiency in the “Computer Networks” class.
+        </li>
+        <li>
+          <strong>Blockchain-Based Energy Trading Simulation:</strong> Demonstrated a secure and
+          decentralized approach to energy transactions in the “Wireless and Network Security” course.
+        </li>
+      </ul>
+      <p>
+        These standout projects showcase the practical, hands-on nature of Dr. Sherif’s coursework,
+        preparing students to address real-world industry challenges.
+      </p>
+    </section>
+
+    <!-- Contact & Office Hours -->
+    <section class="info-card">
+      <h2>Contact & Office Hours</h2>
+      <p>
+        If you would like to learn more about Dr. Sherif’s teaching methods, course details,
+        or potential collaborations, please reach out during his posted office hours or email at:
+        <a href="mailto:Ahmed.Sherif@usm.edu">Ahmed.Sherif@usm.edu</a>.
+      </p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Spen Lab. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Spenn Lab. All rights reserved.</p>
   </footer>
 
   <script src="js/script.js"></script>
