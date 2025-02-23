@@ -1,9 +1,9 @@
 // Handle mobile nav toggle
 const navToggle = document.getElementById('navToggle');
-const navUl = document.querySelector('#navbar ul');
+const navbar = document.getElementById('navbar').querySelector('ul');
 
 navToggle.addEventListener('click', () => {
-  navUl.classList.toggle('showNav');
+  navbar.classList.toggle('showNav');
 });
 
 // Dynamically update the footer year
