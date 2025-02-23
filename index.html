@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Ensures proper scaling on mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Spenn Lab – Home</title>
+  <title>Spen Lab – Home</title>
   <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
 
   <!-- Header -->
   <header>
+    <!-- Left: Southern Miss Logo -->
     <div class="header-left">
       <img src="images/2.png" alt="Southern Miss Logo" class="left-logo" />
     </div>
 
+    <!-- Center: Navigation -->
     <div class="header-center">
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
-      <nav id="navbar">
+      <!-- Add .nav-bar-bg to apply blue background only around the nav links -->
+      <nav id="navbar" class="nav-bar-bg">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="updates.html">Recent Updates</a></li>
@@ -25,17 +27,17 @@
           <li><a href="teaching.html">Teaching</a></li>
           <li><a href="service.html">Service</a></li>
           <li><a href="team.html">Team</a></li>
-          <li><a href="supervisors.html">Supervisors</a></li>
         </ul>
       </nav>
     </div>
 
+    <!-- Right: Spenn Lab Logo only -->
     <div class="header-right">
-      <img src="images/logo.png" alt="Spenn Lab Logo" class="right-logo" />
+      <img src="images/logo.png" alt="Spen Lab Logo" class="right-logo" />
     </div>
   </header>
 
-  <!-- Icon Strip -->
+  <!-- NEW: A row/section for the 3 icons, centered -->
   <section class="icon-strip">
     <img src="images/Ai.png" alt="AI Icon" />
     <img src="images/hardware.png" alt="Hardware Icon" />
@@ -45,7 +47,7 @@
   <!-- Hero Section -->
   <section class="hero home-hero">
     <div class="hero-content">
-      <h1 class="headline">Welcome to Spenn Lab</h1>
+      <h1 class="headline">Welcome to Spen Lab</h1>
       <h2 class="sub-headline">Driving Innovation in Cybersecurity and Networked Systems</h2>
       <p>
         We specialize in secure, privacy-preserving technologies for IoT,
@@ -59,14 +61,14 @@
   </section>
 
   <main>
-    <!-- About Section -->
-    <section class="info-card">
-      <h2>About Spenn Lab</h2>
+    <!-- About Spenn Lab -->
+    <section class="intro">
+      <h2>About Spen Lab</h2>
       <p>
-        Spenn Lab is an interdisciplinary research group dedicated to advancing cutting-edge
-        technologies in cybersecurity, privacy, and networked systems. We develop novel methods
-        for secure data sharing, enhance IoT security, and forge collaborations that drive
-        real-world impact.
+        Spen Lab is an interdisciplinary research group dedicated to advancing
+        cutting-edge technologies in cybersecurity, privacy, and networked systems.
+        We develop novel methods for secure data sharing, enhance IoT security,
+        and forge collaborations that drive real-world impact.
       </p>
       <ul>
         <li>Develop secure data-sharing techniques</li>
@@ -74,21 +76,81 @@
         <li>Strengthen IoT and smart grids against cyber threats</li>
         <li>Collaborate with industry for real-world applications</li>
       </ul>
+      <p>
+        We believe in fostering an environment of innovation, mentorship,
+        and collaboration. Our work spans fundamental theoretical research
+        and practical, applied solutions with high societal impact.
+      </p>
+    </section>
+
+    <!-- Example: Supervisor Info, Highlights, etc. -->
+    <section class="info-card" style="margin-bottom:2rem;">
+      <h2>About Our Lead Academic Supervisor</h2>
+      <div class="supervisor-combined">
+        <div class="supervisor-details">
+          <h3>Dr. Ahmed Sherif, Senior Member, IEEE</h3>
+          <p><strong>Associate Professor, School of Computing Sciences &amp; Computer Engineering,<br>
+          University of Southern Mississippi (USM)</strong></p>
+
+          <p>
+            Dr. Ahmed Sherif is the driving force behind Spen Lab’s research initiatives.
+            As the founder and director of the Security and Privacy of Emerging Networks (SPEN)
+            Research Lab at USM, he leads a diverse team of graduate and undergraduate students
+            in pioneering research across several cutting-edge fields.
+          </p>
+
+          <h4>Education</h4>
+          <ul>
+            <li>Ph.D. – Tennessee Technological University (2017)</li>
+            <li>M.S. – Egypt Japan University of Science &amp; Technology (2014)</li>
+            <li>B.S. – Al Azhar University (2007)</li>
+          </ul>
+          <p>
+            Dr. Sherif’s excellence in research has been recognized with the
+            Aubrey Keith and Ella Ginn Lucas Endowment for Faculty Excellence Award (USM, 2022).
+            He has also secured multiple internal and external grants to support his
+            innovative projects.
+          </p>
+
+          <h4>Research &amp; Publications</h4>
+          <p>
+            Featured in IEEE ICC, IEEE VTC, IEEE TDSC, IEEE TVT, IEEE IoT Journal, and more.
+            Serves as reviewer/editor for top-tier journals and conferences.
+          </p>
+
+          <h4>Contact Information</h4>
+          <p>
+            <strong>Office:</strong> Chain Technology Center (TEC) 329, Hattiesburg<br />
+            <strong>Email:</strong> <a href="mailto:Ahmed.Sherif@usm.edu">Ahmed.Sherif@usm.edu</a><br />
+            <strong>Phone:</strong> (601) 000-0000
+          </p>
+        </div>
+        <div class="supervisor-photo-column">
+          <img src="images/1.png" alt="Dr. Ahmed Sherif" class="professor-photo-large" />
+          <div style="margin-top:1.5rem; text-align:center;">
+            <img src="images/2.png" alt="Southern Miss Logo" style="max-width:120px;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-card highlights-card">`
+      <h2>Recent Highlights</h2>
+      <p>
+        <strong>New IEEE Publication:</strong> Our latest paper on
+        “IoT-Based Secure Data Collection” was accepted in the IEEE Internet of Things Journal!
+      </p>
+      <p>
+        Want to see more updates or news?
+        <a href="updates.html" class="link-highlight">View Recent Updates</a>
+      </p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Spenn Lab. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Spen Lab. All rights reserved.</p>
   </footer>
 
-  <!-- Minimal JavaScript for mobile nav toggle and dynamic year -->
-  <script>
-    const navToggle = document.getElementById('navToggle');
-    const navbar = document.getElementById('navbar');
-    navToggle.addEventListener('click', () => {
-      navbar.querySelector('ul').classList.toggle('showNav');
-    });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
