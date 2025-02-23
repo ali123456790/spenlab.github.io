@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spen Lab – Research & Publications</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+
+  <!-- Header (Left–Center–Right Layout) -->
+  <header>
+    <div class="header-left">
+      <img src="images/2.png" alt="Southern Miss Logo" class="left-logo" />
+    </div>
+
+    <div class="header-center">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <nav id="navbar" class="nav-bar-bg">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="updates.html">Recent Updates</a></li>
+          <li><a href="research.html" class="active">Research & Publications</a></li>
+          <li><a href="teaching.html">Teaching</a></li>
+          <li><a href="service.html">Service</a></li>
+          <li><a href="team.html">Team</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <img src="images/logo.png" alt="Spen Lab Logo" class="right-logo" />
+    </div>
+  </header>
+
+  <!-- NEW: Icon strip under the header -->
+  <section class="icon-strip">
+    <img src="images/Ai.png" alt="AI Icon" />
+    <img src="images/hardware.png" alt="Hardware Icon" />
+    <img src="images/security.png" alt="Security Icon" />
+  </section>
+
+  <!-- Hero / Title Section -->
+  <section class="hero research-hero">
+    <div class="hero-text">
+      <h1>Research Interests & Publications</h1>
+      <p>
+        Dr. Sherif and Spen Lab actively explore the following areas,
+        publishing cutting-edge research that advances cybersecurity,
+        privacy, and network technologies.
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Research Interests -->
+    <section class="research-interests">
+      <h2>Research Interests</h2>
+      <p class="interests-intro">
+        Our key focus areas involve protecting data, ensuring privacy,
+        and optimizing performance in modern networked systems.
+      </p>
+
+      <div class="interests-grid">
+        <div class="interests-card">
+          <h3>Cybersecurity &amp; Privacy in Autonomous Vehicles (AVs)</h3>
+          <ul>
+            <li>Design secure communication protocols in VANETs</li>
+            <li>Privacy-preserving schemes for in-transit data</li>
+          </ul>
+        </div>
+        <div class="interests-card">
+          <h3>IoT and Smart Grid Security</h3>
+          <ul>
+            <li>Analyze vulnerabilities in large-scale IoT sensor networks</li>
+            <li>Secure data management in smart grid AMI</li>
+          </ul>
+        </div>
+        <div class="interests-card">
+          <h3>Blockchain-based Energy Trading</h3>
+          <ul>
+            <li>Explore decentralized energy marketplaces for EVs or prosumers</li>
+            <li>Develop privacy-preserving blockchain protocols</li>
+          </ul>
+        </div>
+        <div class="interests-card">
+          <h3>Advanced Data Mining &amp; Machine Learning</h3>
+          <ul>
+            <li>Implement ML algorithms for cyberattack detection</li>
+            <li>Big data mining for proactive threat detection</li>
+          </ul>
+        </div>
+        <div class="interests-card">
+          <h3>Next-Generation Network Security</h3>
+          <ul>
+            <li>Investigate 5G/6G vulnerabilities and robust security measures</li>
+            <li>Secure routing, authentication, and key management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications with Tabs -->
+    <section class="publications-section">
+      <h2>Publications</h2>
+      <p>
+        <em>*my MSc Student, **PhD Student, ^ Visiting Scholar, ^^Undergrad Student, ++Postdoc (current/former)</em>
+      </p>
+
+      <!-- Tab Links -->
+      <ul class="tab-list">
+        <li class="tab-link active" data-tab="journal-tab">Journal Papers</li>
+        <li class="tab-link" data-tab="conf-tab">Conference Papers</li>
+        <li class="tab-link" data-tab="books-tab">Conferences</li>
+      </ul>
+
+      <!-- Tab Content #1: Journal Papers -->
+      <div id="journal-tab" class="tab-content active">
+        <h3>Journal Papers</h3>
+        <p><strong>*my MSc Student, **PhD Student, etc.</strong></p>
+        <ol>
+          <li>First Journal Paper Title</li>
+          <li>Second Journal Paper Title</li>
+          <!-- Add more as needed -->
+        </ol>
+      </div>
+
+      <!-- Tab Content #2: Conference Papers -->
+      <div id="conf-tab" class="tab-content">
+        <h3>Conference Papers</h3>
+        <p><strong>*my MSc Student, **PhD Student, etc.</strong></p>
+        <ol>
+          <li>First Conference Paper Title</li>
+          <li>Second Conference Paper Title</li>
+          <!-- Add more as needed -->
+        </ol>
+      </div>
+
+      <!-- Tab Content #3: Conferences (labeled as "Books & Book Chapters" originally) -->
+      <div id="books-tab" class="tab-content">
+        <h3>Conferences</h3>
+        <p><strong>*my MSc Student, **PhD Student, etc.</strong></p>
+        <ol>
+          <li>First Book Chapter Title</li>
+          <li>Second Book Chapter Title</li>
+          <!-- Add more as needed -->
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Spen Lab. All rights reserved.</p>
+  </footer>
+
+  <!-- Minimal inline JS to toggle tabs -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabLinks = document.querySelectorAll('.tab-link');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          // remove "active" from all links
+          tabLinks.forEach(l => l.classList.remove('active'));
+          // remove "active" from all tab contents
+          tabContents.forEach(tc => tc.classList.remove('active'));
+
+          // add "active" to clicked link
+          link.classList.add('active');
+          // get the ID from data-tab attribute
+          const tabID = link.getAttribute('data-tab');
+          // find the matching content div and add "active"
+          document.getElementById(tabID).classList.add('active');
+        });
+      });
+    });
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>
