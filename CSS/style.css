@@ -574,3 +574,10 @@ footer {
   width: auto;
   border-radius: 4px;
 }
+
+/* Center just the heading and intro text */
+.research-interests h2,
+.research-interests .interests-intro {
+  text-align: center;
+}
+
