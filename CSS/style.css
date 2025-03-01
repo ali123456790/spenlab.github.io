@@ -13,13 +13,12 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  color: #fff;             /* Main text color: white */
-  background-color: #000;  /* Main background: black */
+  color: #333;
+  background-color: #fafafa;
 }
 
 h1, h2, h3, h4 {
   font-weight: 600;
-  color: #FFD700;          /* Gold headings */
 }
 
 p, li {
@@ -27,23 +26,24 @@ p, li {
 }
 
 a {
-  color: #FFD700;          /* Gold links */
+  color: #000000;
   text-decoration: none;
 }
+
 a:hover {
-  color: #fff;             /* White on hover for contrast */
   text-decoration: underline;
+  color: #FFD100;
 }
 
 /* Optional highlight class for special emphasis links */
 .link-highlight {
   font-weight: bold;
-  color: #FFD700;
+  color: #000000;
   text-decoration: none;
 }
 .link-highlight:hover {
   text-decoration: underline;
-  color: #fff;
+  color: #FFD100;
 }
 
 /* -------------------------------------------------------
@@ -52,13 +52,14 @@ a:hover {
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* distribute sub-containers horizontally */
   padding: 1rem;
-  background-color: #000;  /* Black header */
-  color: #fff;             /* White text by default in header */
+  color: #fff;
   position: relative;
+  /* background-color: #003366;  <-- Removed so it doesn't span entire header */
 }
 
+/* Sub-containers for left, center, right */
 .header-left,
 .header-center,
 .header-right {
@@ -72,7 +73,8 @@ header {
   width: auto;
 }
 
-/* Middle container for nav */
+/* Middle container for nav
+   No background color here so it remains transparent. */
 .header-center {
   flex: 1;
   justify-content: center;
@@ -80,12 +82,12 @@ header {
   align-items: center;
 }
 
-/* The .nav-bar-bg applies the black behind nav links */
+/* The .nav-bar-bg class to apply the blue behind nav only */
 .nav-bar-bg {
-  background-color: #000;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  display: flex;
+  background-color: #000000;
+  padding: 0.5rem 1rem;   /* Adjust to control bar's height & width */
+  border-radius: 4px;     /* Optional for rounded corners */
+  display: flex;          /* Ensure the nav items line up properly */
   align-items: center;
 }
 
@@ -96,38 +98,41 @@ header {
   gap: 1rem;
 }
 
-/* Nav links in gold; underline for active */
+/* Nav links remain white so they're visible on the blue background */
 #navbar a {
-  color: #FFD700;
+  color: #fff;
   font-weight: 500;
   text-decoration: none;
 }
 #navbar a:hover {
-  color: #fff;
+  text-decoration: underline;
 }
+
 .active {
   text-decoration: underline;
 }
 
-/* Right container for the lab logo or icons */
+/* Right container for the 3 icons + Spenn Lab logo */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.75rem; /* space between the icons and the final logo */
 }
 
-/* Logos */
+/* The 3 extra icons (AI, hardware, security) on the right side */
 .header-icon {
   height: 40px;
   width: auto;
   border-radius: 10px;
 }
+
+/* The Spenn Lab logo on the far right */
 .right-logo {
   height: 150px;
   width: auto;
 }
 
-/* Hamburger toggle (mobile) */
+/* Hamburger toggle (hidden by default) */
 .nav-toggle {
   display: none;
   background: transparent;
@@ -146,15 +151,14 @@ main {
   padding: 0 1rem;
 }
 
-/* Basic card styling for info boxes, etc. */
 .info-card {
-  background-color: #111;  /* Dark gray so it stands out from pure black */
-  color: #fff;
+  background-color: #fff;
   padding: 1.5rem;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
   margin-bottom: 2rem;
 }
+
 .intro {
   margin: 2rem 0;
 }
@@ -162,10 +166,9 @@ main {
 /* -------------------------------------------------------
    5) Hero Sections
 --------------------------------------------------------- */
-/* All hero sections: gold background, black text */
 .hero {
-  background-color: #FFD700; /* Gold background */
-  color: #000;               /* Black text for strong contrast */
+  background-color: #000000;
+  color: #fff;
   padding: 3rem 1rem;
   margin-bottom: 2rem;
   border-radius: 6px;
@@ -176,12 +179,22 @@ main {
   align-items: center;
 }
 
-/* Custom hero classes (reuse same color palette) */
-.home-hero { /* uses gold background from .hero */ }
-.research-hero { /* uses gold background from .hero */ }
-.teaching-hero { /* uses gold background from .hero */ }
+.home-hero { /* custom or blank for now */ }
+.research-hero {
+  background-color: #000000;
+}
 
-/* Hero content styling */
+.teaching-hero .spenn-lab-logo {
+  width: 100px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.research-hero .spenn-lab-logo {
+  width: 150px;
+  height: auto;
+}
+
 .hero-content {
   max-width: 600px;
   text-align: center;
@@ -196,13 +209,13 @@ main {
 .headline {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: #000;
+  color: #fff;
 }
 .sub-headline {
   font-size: 1.2rem;
   font-weight: 400;
   margin-bottom: 1rem;
-  color: #333;
+  color: #eee;
 }
 .hero-text {
   max-width: 600px;
@@ -216,24 +229,24 @@ main {
 .cta-button {
   display: inline-block;
   margin: 0.5rem 0.5rem 0 0;
-  background-color: #fff;    /* White background */
-  color: #000;              /* Black text */
+  background-color: #fff;
+  color: #000000;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
 }
 .cta-button:hover {
-  background-color: #000;    /* Invert on hover */
-  color: #FFD700;
+  background-color: #FFD100;
+  color: #000;
 }
 .secondary-cta {
   background-color: #eee;
   color: #333;
 }
 .secondary-cta:hover {
-  background-color: #000;
-  color: #FFD700;
+  background-color: #FFD100;
+  color: #000;
 }
 
 /* -------------------------------------------------------
@@ -243,9 +256,9 @@ main {
   margin-bottom: 2rem;
   text-align: center;
 }
+
 .page-title h1 {
   margin-bottom: 0.5rem;
-  color: #FFD700;
 }
 
 .updates-list article {
@@ -253,13 +266,13 @@ main {
 }
 .updates-list article h2 {
   margin-bottom: 0.25rem;
-  color: #FFD700;
+  color: #000000;
   font-size: 1.1rem;
 }
 
-/* Example highlight card (left border gold) */
+/* Example highlight card (left border) */
 .highlights-card {
-  border-left: 4px solid #FFD700;
+  border-left: 4px solid #FFD100;
   padding-left: 1rem;
 }
 
@@ -274,58 +287,127 @@ main {
   margin: 0.5rem auto 1rem;
   line-height: 1.4;
   text-align: center;
-  color: #fff;
 }
-
 .interests-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
-
 .interests-card {
-  background-color: #111;
-  padding: 1rem;
+  background-color: #fff;
+  padding: 1.5rem;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+.interests-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background-color: #FFD100;
+  transition: height 0.5s ease;
+}
+.interests-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+.interests-card:hover::before {
+  height: 100%;
 }
 .interests-card h3 {
-  color: #FFD700;
+  color: #000000;
   margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 0;
+  transition: padding-left 0.3s ease;
+}
+.interests-card:hover h3 {
+  padding-left: 10px;
 }
 .interests-card ul {
   margin-left: 1.2rem;
   margin-bottom: 0;
   list-style: disc;
 }
+.interests-card li {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+.interests-card:hover li {
+  transform: translateX(5px);
+}
+
+/* Animation classes for research cards */
+.interests-card.animate {
+  animation: fadeInUp 0.6s ease forwards;
+}
+.interests-card:nth-child(1) { animation-delay: 0.1s; }
+.interests-card:nth-child(2) { animation-delay: 0.3s; }
+.interests-card:nth-child(3) { animation-delay: 0.5s; }
+.interests-card:nth-child(4) { animation-delay: 0.7s; }
+.interests-card:nth-child(5) { animation-delay: 0.9s; }
+
+/* Card icon animations */
+.card-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.interests-card:hover .card-icon {
+  transform: rotate(10deg) scale(1.2);
+}
+
+/* Keyframes animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .publications-section {
   margin-bottom: 2rem;
 }
 .publications-section h2 {
-  color: #FFD700;
+  color: #000000;
   margin-bottom: 0.5rem;
   text-align: center;
 }
-
 .pub-cards {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 1.5rem;
   margin-top: 1rem;
 }
-
 .pub-card {
-  background-color: #111;
-  border: 1px solid #333;
+  background-color: #fff;
+  border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 .pub-card h3 {
   margin-bottom: 0.3rem;
   font-size: 1.1rem;
-  color: #FFD700;
+  color: #000000;
 }
 .pub-card p {
   margin-bottom: 0.5rem;
@@ -333,7 +415,7 @@ main {
 }
 .citation-metrics h2 {
   margin-top: 0;
-  color: #FFD700;
+  color: #000000;
 }
 
 /* -------------------------------------------------------
@@ -343,7 +425,7 @@ main {
   margin-bottom: 2rem;
 }
 .course-level h3 {
-  color: #FFD700;
+  color: #000000;
   margin-bottom: 1rem;
 }
 .course-grid {
@@ -353,11 +435,11 @@ main {
   margin-bottom: 1rem;
 }
 .course-card {
-  background-color: #111;
-  border: 1px solid #333;
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 6px;
   padding: 1.5rem;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
 }
 .course-icon {
   width: 100%;
@@ -368,11 +450,11 @@ main {
 }
 .course-card h4 {
   margin-bottom: 0.5rem;
-  color: #FFD700;
+  color: #000000;
 }
 
 /* -------------------------------------------------------
-   10) Supervisor Info on Home Page
+   10) Supervisor Info on Home Page (If used)
 --------------------------------------------------------- */
 .supervisor-combined {
   display: flex;
@@ -392,36 +474,39 @@ main {
   width: 100%;
   height: auto;
   border-radius: 4px;
-  border: 2px solid #333;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+  border: 2px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
   margin-top: 1rem;
 }
 
 /* -------------------------------------------------------
-   11) Team Page
+   11) Team Page – KEY CHANGES for 2-column layout
 --------------------------------------------------------- */
 .team-group {
   margin-bottom: 2rem;
 }
 .team-group h3 {
-  color: #FFD700;
+  color: #000000;
   margin-bottom: 1rem;
 }
-/* 2-column layout for team cards */
+
+/* Replaced flex with a 2-column grid for .team-cards */
 .team-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* exactly 2 columns on larger screens */
   gap: 1.5rem;
 }
 
+/* .team-card is each grid item */
 .team-card {
-  background-color: #111;
-  border: 1px solid #333;
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 6px;
   padding: 1rem;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
 }
 
+/* For side-by-side layout inside each card (image left, text right) */
 .team-card.detailed-profile {
   display: flex;
   gap: 1rem;
@@ -431,8 +516,8 @@ main {
   max-width: 130px;
   height: auto;
   border-radius: 4px;
-  border: 2px solid #333;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+  border: 2px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.07);
 }
 .team-card.detailed-profile .profile-info {
   flex: 1;
@@ -441,7 +526,7 @@ main {
 /* Force single column on smaller screens */
 @media (max-width: 768px) {
   .team-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 column on small screens */
   }
 }
 
@@ -451,8 +536,8 @@ main {
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #000;
-  color: #FFD700;
+  background-color: #000000;
+  color: #fff;
   margin-top: 2rem;
 }
 
@@ -460,6 +545,7 @@ footer {
    13) Responsive (Mobile)
 --------------------------------------------------------- */
 @media (max-width: 768px) {
+  /* Let header wrap on small screens */
   header {
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -482,17 +568,42 @@ footer {
   }
   #navbar ul {
     flex-direction: column;
-    background-color: #000; /* Black for mobile menu too */
+    background-color: #000000; /* Changed from blue to black for mobile menu */
     display: none;
     padding: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   }
   #navbar ul.showNav {
     display: block;
   }
+  
+  #navbar ul li {
+    margin: 0.5rem 0;
+  }
+  
+  /* Adjust logo sizes for mobile */
+  .left-logo, .right-logo {
+    height: 80px;
+  }
+
+  /* Icon strip adjustments for mobile */
+  .icon-strip {
+    padding: 0.5rem 0;
+  }
+  .icon-strip img {
+    height: 100px;
+  }
+
   /* Hero section stacks */
   .hero {
     flex-direction: column;
     text-align: center;
+    padding: 2rem 1rem;
   }
   .hero-content {
     max-width: 100%;
@@ -501,12 +612,58 @@ footer {
     text-align: center;
     max-width: 100%;
   }
-  /* Single column for course grids, interests, etc. */
+  .headline {
+    font-size: 1.5rem;
+  }
+  .sub-headline {
+    font-size: 1rem;
+  }
+  
+  /* Research interests mobile optimizations */
+  .interests-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .interests-card {
+    padding: 1rem;
+  }
+  .card-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Adjust animation timings for mobile */
+  .interests-card:nth-child(1) { animation-delay: 0.05s; }
+  .interests-card:nth-child(2) { animation-delay: 0.1s; }
+  .interests-card:nth-child(3) { animation-delay: 0.15s; }
+  .interests-card:nth-child(4) { animation-delay: 0.2s; }
+  .interests-card:nth-child(5) { animation-delay: 0.25s; }
+  
+  /* Tabs adjustments for mobile */
+  .tab-list {
+    flex-direction: column;
+    gap: 0.3rem;
+    border-bottom: none;
+  }
+  .tab-link {
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  .tab-link.active {
+    border-bottom: 1px solid #ddd;
+  }
+  .tab-content {
+    border: 1px solid #ddd;
+  }
+
+  /* The .team-cards grid is overridden above to 1 column,
+     but other layouts also adapt. */
   .course-grid,
-  .interests-grid,
   .pub-cards {
     grid-template-columns: 1fr;
   }
+
+  /* Supervisor combos stack */
   .supervisor-combined {
     flex-direction: column;
     align-items: center;
@@ -514,6 +671,44 @@ footer {
   .supervisor-details,
   .supervisor-photo-column {
     width: 100%;
+  }
+  
+  /* General text adjustments for better readability on mobile */
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  p, li {
+    font-size: 0.95rem;
+  }
+  
+  /* Main content padding adjustments */
+  main {
+    padding: 0 0.75rem;
+    margin: 1.5rem auto;
+  }
+  
+  /* Improve touch targets for better mobile experience */
+  a, button, .tab-link {
+    padding: 0.8rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Adjust CTA buttons for mobile */
+  .cta-button {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 0.5rem auto;
+    text-align: center;
   }
 }
 
@@ -525,37 +720,37 @@ footer {
   gap: 0.5rem;
   margin: 1rem 0;
   list-style: none;
-  border-bottom: 2px solid #FFD700;
+  border-bottom: 2px solid #ddd;
 }
+
+/* Each clickable tab link */
 .tab-link {
   padding: 0.5rem 1rem;
-  background-color: #111; /* matches site’s dark theme */
-  border: 1px solid #333;
+  background-color: #eee;
+  border: 1px solid #ddd;
   border-bottom: none;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  color: #fff;
+  transition: background-color 0.3s;
 }
 .tab-link:hover {
-  background-color: #222;
+  background-color: #ddd;
 }
 .tab-link.active {
-  background-color: #000;
-  border-bottom: 2px solid #000;
+  background-color: #fff;
+  border-bottom: 2px solid #fff;
   font-weight: bold;
-  color: #FFD700;
 }
-/* Tab content containers */
+
+/* Tab content containers are hidden by default */
 .tab-content {
   display: none;
   padding: 1rem;
-  background-color: #111;
-  border: 1px solid #333;
+  border: 1px solid #ddd;
   border-top: none;
-  color: #fff;
 }
 .tab-content.active {
   display: block;
+  background-color: #fff;
 }
 
 /* -------------------------------------------------------
@@ -566,7 +761,7 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  background-color: #000;   /* Black for icon strip */
+  background-color: #000000;
   padding: 1rem 0;
 }
 .icon-strip img {
@@ -581,3 +776,169 @@ footer {
   text-align: center;
 }
 
+/* Meeting Scheduler Section */
+.meeting-scheduler {
+    background-color: #000000; /* Black background */
+    padding: 2rem 2rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.meeting-scheduler h2 {
+    color: #FFD100; /* Gold heading */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.meeting-scheduler p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ffffff; /* White text */
+}
+
+/* Form Styling */
+.form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f8f9fa; /* Light background for the form */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border: 1px solid #FFD100; /* Gold border */
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.form-row .form-group {
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+textarea {
+    height: 5rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #FFD100; /* Gold focus */
+    box-shadow: 0 0 0 2px rgba(255, 209, 0, 0.2);
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.submit-button {
+    background-color: #FFD100; /* Gold button */
+    color: #000000; /* Black text */
+    border: none;
+    padding: 0.6rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.submit-button:hover {
+    background-color: #E6BC00; /* Slightly darker gold on hover */
+}
+
+.submit-button:active {
+    transform: translateY(1px);
+}
+
+/* Responsive adjustments for meeting scheduler */
+@media (max-width: 768px) {
+    .meeting-scheduler {
+        padding: 1.5rem 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-row .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-container {
+        padding: 1rem;
+    }
+    
+    /* Improve form field touch targets on mobile */
+    input, select, textarea {
+        padding: 0.8rem;
+        min-height: 44px;
+        font-size: 16px; /* Prevents iOS zoom on focus */
+    }
+    
+    .submit-button {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        min-height: 44px;
+    }
+}
+
+/* Touch device styles for interest cards */
+.interests-card.touch-active {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+.interests-card.touch-active::before {
+  height: 100%;
+}
+.interests-card.touch-active h3 {
+  padding-left: 10px;
+}
+.interests-card.touch-active li {
+  transform: translateX(5px);
+}
+.interests-card.touch-active .card-icon {
+  transform: rotate(10deg) scale(1.2);
+}
+
+/* Lazy load images */
+img.lazy {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+img.lazy.loaded {
+  opacity: 1;
+}
+
+/* Improved accessibility focus styles */
+a:focus, button:focus, input:focus, textarea:focus, select:focus {
+  outline: 2px solid #FFD100;
+  outline-offset: 2px;
+}
