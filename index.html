@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SPEN Lab – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+  <meta name="description" content="Spen Lab - Driving Innovation in Cybersecurity and Networked Systems at University of Southern Mississippi">
+  <meta name="theme-color" content="#000000">
+  <title>Spen Lab – Home</title>
   <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
@@ -12,13 +14,13 @@
   <header>
     <!-- Left: Southern Miss Logo -->
     <div class="header-left">
-      <img src="images/2.png" alt="Southern Miss Logo" class="left-logo" />
+      <img src="images/2.png" alt="Southern Miss Logo" class="left-logo" width="150" height="150" />
     </div>
 
     <!-- Center: Navigation -->
     <div class="header-center">
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
-      <!-- Add .nav-bar-bg to apply blue background only around the nav links -->
+      <!-- Add .nav-bar-bg to apply black background only around the nav links -->
       <nav id="navbar" class="nav-bar-bg">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
@@ -31,23 +33,23 @@
       </nav>
     </div>
 
-    <!-- Right: SPENn Lab Logo only -->
+    <!-- Right: Spenn Lab Logo only -->
     <div class="header-right">
-      <img src="images/logo.png" alt="SPEN Lab Logo" class="right-logo" />
+      <img src="images/logo.png" alt="Spen Lab Logo" class="right-logo" width="150" height="150" />
     </div>
   </header>
 
   <!-- NEW: A row/section for the 3 icons, centered -->
   <section class="icon-strip">
-    <img src="images/AI.png" alt="AI Icon" />
-    <img src="images/Hardware.png" alt="Hardware Icon" />
-    <img src="images/Security.png" alt="Security Icon" />
+    <img src="images/Ai.png" alt="AI Icon" class="lazy" data-src="images/Ai.png" width="250" height="250" />
+    <img src="images/hardware.png" alt="Hardware Icon" class="lazy" data-src="images/hardware.png" width="250" height="250" />
+    <img src="images/security.png" alt="Security Icon" class="lazy" data-src="images/security.png" width="250" height="250" />
   </section>
 
   <!-- Hero Section -->
   <section class="hero home-hero">
     <div class="hero-content">
-      <h1 class="headline">Welcome to SPEN Lab</h1>
+      <h1 class="headline">Welcome to Spen Lab</h1>
       <h2 class="sub-headline">Driving Innovation in Cybersecurity and Networked Systems</h2>
       <p>
         We specialize in secure, privacy-preserving technologies for IoT,
@@ -61,11 +63,11 @@
   </section>
 
   <main>
-    <!-- About SPENn Lab -->
+    <!-- About Spenn Lab -->
     <section class="intro">
-      <h2>About SPEN Lab</h2>
+      <h2>About Spen Lab</h2>
       <p>
-        SPEN Lab is an interdisciplinary research group dedicated to advancing
+        Spen Lab is an interdisciplinary research group dedicated to advancing
         cutting-edge technologies in cybersecurity, privacy, and networked systems.
         We develop novel methods for secure data sharing, enhance IoT security,
         and forge collaborations that drive real-world impact.
@@ -93,7 +95,7 @@
           University of Southern Mississippi (USM)</strong></p>
 
           <p>
-            Dr. Ahmed Sherif is the driving force behind SPEN Lab’s research initiatives.
+            Dr. Ahmed Sherif is the driving force behind Spen Lab's research initiatives.
             As the founder and director of the Security and Privacy of Emerging Networks (SPEN)
             Research Lab at USM, he leads a diverse team of graduate and undergraduate students
             in pioneering research across several cutting-edge fields.
@@ -106,7 +108,7 @@
             <li>B.S. – Al Azhar University (2007)</li>
           </ul>
           <p>
-            Dr. Sherif’s excellence in research has been recognized with the
+            Dr. Sherif's excellence in research has been recognized with the
             Aubrey Keith and Ella Ginn Lucas Endowment for Faculty Excellence Award (USM, 2022).
             He has also secured multiple internal and external grants to support his
             innovative projects.
@@ -126,9 +128,9 @@
           </p>
         </div>
         <div class="supervisor-photo-column">
-          <img src="images/1.png" alt="Dr. Ahmed Sherif" class="professor-photo-large" />
+          <img src="images/1.png" alt="Dr. Ahmed Sherif" class="professor-photo-large" width="200" height="200" />
           <div style="margin-top:1.5rem; text-align:center;">
-            <img src="images/2.png" alt="Southern Miss Logo" style="max-width:120px;" />
+            <img src="images/2.png" alt="Southern Miss Logo" style="max-width:120px;" width="120" height="120" />
           </div>
         </div>
       </div>
@@ -138,7 +140,7 @@
       <h2>Recent Highlights</h2>
       <p>
         <strong>New IEEE Publication:</strong> Our latest paper on
-        “IoT-Based Secure Data Collection” was accepted in the IEEE Internet of Things Journal!
+        "IoT-Based Secure Data Collection" was accepted in the IEEE Internet of Things Journal!
       </p>
       <p>
         Want to see more updates or news?
@@ -147,8 +149,63 @@
     </section>
   </main>
 
+  <!-- Meeting Scheduler Section -->
+  <section class="meeting-scheduler">
+    <h2>Schedule a Meeting</h2>
+    <p>Please fill out this form to schedule a meeting with our team. We'll get back to you with confirmation shortly.</p>
+    <div class="form-container">
+      <form id="meeting-form" action="mailto:zainzohaibz@yahoo.com" method="POST" enctype="text/plain">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="reason">Reason for Meeting</label>
+          <textarea id="reason" name="reason" rows="3" required></textarea>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="meetingDate">Preferred Date</label>
+            <input type="date" id="meetingDate" name="meetingDate" required>
+          </div>
+          <div class="form-group">
+            <label for="timeSlot">Preferred Time</label>
+            <select id="timeSlot" name="timeSlot" required>
+              <option value="" disabled selected>Select a time</option>
+              <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+              <option value="afternoon">Afternoon (1:00 PM - 4:00 PM)</option>
+              <option value="evening">Evening (4:00 PM - 6:00 PM)</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" rows="3"></textarea>
+        </div>
+        
+        <div class="form-submit">
+          <button type="submit" class="submit-button">Schedule Meeting</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
   <footer>
-    <p>&copy; <span id="year"></span> SPEN Lab. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Spen Lab. All rights reserved.</p>
   </footer>
 
   <script src="js/script.js"></script>
