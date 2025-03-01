@@ -1,3 +1,47 @@
+// Preloader handling
+window.addEventListener('load', function() {
+  // Force image loading by creating new Image objects
+  const imageUrls = [
+    'images/Security Icon.png',
+    'images/Hardware.png',
+    'images/Privacy Icon.png',
+    'images/AI.png',
+    'images/Networks Icon.png',
+    'images/Security.png'
+  ];
+  
+  // Preload all required images
+  imageUrls.forEach(url => {
+    const img = new Image();
+    img.src = url;
+    img.onload = function() {
+      console.log('Image loaded:', url);
+    };
+    img.onerror = function() {
+      console.error('Failed to load image:', url);
+    };
+  });
+  
+  // Hide preloader when page is fully loaded
+  const preloader = document.querySelector('.preloader');
+  if (preloader) {
+    preloader.classList.add('loaded');
+    
+    // Remove preloader from DOM after transition completes
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500);
+  }
+  
+  // Add animation class to interest cards
+  const interestCards = document.querySelectorAll('.interests-card');
+  interestCards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add('animate');
+    }, 100 + (index * 150)); // Staggered timing
+  });
+});
+
 // Handle mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const navbar = document.getElementById('navbar').querySelector('ul');
@@ -42,7 +86,11 @@ document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
 const interestCards = document.querySelectorAll('.interests-card');
 if ('ontouchstart' in window || navigator.maxTouchPoints) {
   interestCards.forEach(card => {
-    card.addEventListener('touchstart', function() {
+    // On touch start
+    card.addEventListener('touchstart', function(e) {
+      // Prevent default to avoid scrolling
+      e.preventDefault();
+      
       // Remove active class from all other cards
       interestCards.forEach(c => {
         if (c !== card) c.classList.remove('touch-active');
@@ -51,6 +99,24 @@ if ('ontouchstart' in window || navigator.maxTouchPoints) {
       // Toggle active class on this card
       this.classList.toggle('touch-active');
     });
+    
+    // Also handle click events for hybrid devices
+    card.addEventListener('click', function(e) {
+      // If it's not a touch device or event was already handled
+      if (!('ontouchstart' in window) || !e.isTrusted) {
+        interestCards.forEach(c => {
+          if (c !== card) c.classList.remove('touch-active');
+        });
+        this.classList.toggle('touch-active');
+      }
+    });
+  });
+  
+  // Close any open cards when clicking elsewhere
+  document.addEventListener('touchstart', function(e) {
+    if (!e.target.closest('.interests-card')) {
+      interestCards.forEach(c => c.classList.remove('touch-active'));
+    }
   });
 }
 
