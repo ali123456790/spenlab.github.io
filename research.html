@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+  <meta name="description" content="Spen Lab's research interests and publications in cybersecurity, privacy, and networked systems.">
+  <meta name="theme-color" content="#000000">
   <title>Spen Lab – Research & Publications</title>
   <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header (Left–Center–Right Layout) -->
   <header>
     <div class="header-left">
       <img src="images/2.png" alt="Southern Miss Logo" class="left-logo" />
@@ -33,14 +35,14 @@
     </div>
   </header>
 
-  <!-- Icon strip -->
+  <!-- NEW: Icon strip under the header -->
   <section class="icon-strip">
-    <img src="images/AI.png" alt="AI Icon" />
-    <img src="images/Hardware.png" alt="Hardware Icon" />
-    <img src="images/Security.png" alt="Security Icon" />
+    <img src="images/Ai.png" alt="AI Icon" class="lazy" data-src="images/Ai.png" />
+    <img src="images/hardware.png" alt="Hardware Icon" class="lazy" data-src="images/hardware.png" />
+    <img src="images/security.png" alt="Security Icon" class="lazy" data-src="images/security.png" />
   </section>
 
-  <!-- Hero Section -->
+  <!-- Hero / Title Section -->
   <section class="hero research-hero">
     <div class="hero-text">
       <h1>Research Interests & Publications</h1>
@@ -63,6 +65,7 @@
 
       <div class="interests-grid">
         <div class="interests-card">
+          <img src="images/Security Icon.png" alt="Autonomous Vehicle Security" class="card-icon" width="60" height="60">
           <h3>Cybersecurity &amp; Privacy in Autonomous Vehicles (AVs)</h3>
           <ul>
             <li>Design secure communication protocols in VANETs</li>
@@ -70,6 +73,7 @@
           </ul>
         </div>
         <div class="interests-card">
+          <img src="images/Hardware.png" alt="IoT Security" class="card-icon" width="60" height="60">
           <h3>IoT and Smart Grid Security</h3>
           <ul>
             <li>Analyze vulnerabilities in large-scale IoT sensor networks</li>
@@ -77,6 +81,7 @@
           </ul>
         </div>
         <div class="interests-card">
+          <img src="images/Privacy Icon.png" alt="Blockchain" class="card-icon" width="60" height="60">
           <h3>Blockchain-based Energy Trading</h3>
           <ul>
             <li>Explore decentralized energy marketplaces for EVs or prosumers</li>
@@ -84,6 +89,7 @@
           </ul>
         </div>
         <div class="interests-card">
+          <img src="images/AI.png" alt="Data Mining" class="card-icon" width="60" height="60">
           <h3>Advanced Data Mining &amp; Machine Learning</h3>
           <ul>
             <li>Implement ML algorithms for cyberattack detection</li>
@@ -91,6 +97,7 @@
           </ul>
         </div>
         <div class="interests-card">
+          <img src="images/Networks Icon.png" alt="Network Security" class="card-icon" width="60" height="60">
           <h3>Next-Generation Network Security</h3>
           <ul>
             <li>Investigate 5G/6G vulnerabilities and robust security measures</li>
@@ -121,6 +128,7 @@
         <ol>
           <li>First Journal Paper Title</li>
           <li>Second Journal Paper Title</li>
+          <!-- Add more as needed -->
         </ol>
       </div>
 
@@ -131,16 +139,18 @@
         <ol>
           <li>First Conference Paper Title</li>
           <li>Second Conference Paper Title</li>
+          <!-- Add more as needed -->
         </ol>
       </div>
 
-      <!-- Tab Content #3: Conferences -->
+      <!-- Tab Content #3: Conferences (labeled as "Books & Book Chapters" originally) -->
       <div id="books-tab" class="tab-content">
         <h3>Conferences</h3>
         <p><strong>*my MSc Student, **PhD Student, etc.</strong></p>
         <ol>
           <li>First Book Chapter Title</li>
           <li>Second Book Chapter Title</li>
+          <!-- Add more as needed -->
         </ol>
       </div>
     </section>
@@ -150,11 +160,42 @@
     <p>&copy; <span id="year"></span> Spen Lab. All rights reserved.</p>
   </footer>
 
-  <!-- Minimal inline JS to toggle publication tabs -->
+  <!-- Minimal inline JS to toggle tabs -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const tabLinks = document.querySelectorAll('.tab-link');
       const tabContents = document.querySelectorAll('.tab-content');
+      
+      // Animation for research interest cards
+      const interestCards = document.querySelectorAll('.interests-card');
+      
+      // Function to check if element is in viewport
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+      
+      // Add animation class when cards are in viewport
+      function animateOnScroll() {
+        interestCards.forEach(card => {
+          if (isInViewport(card)) {
+            card.classList.add('animate');
+          }
+        });
+      }
+      
+      // Run animation when page loads
+      setTimeout(() => {
+        animateOnScroll();
+      }, 100);
+      
+      // Also run animation on scroll
+      window.addEventListener('scroll', animateOnScroll);
 
       tabLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -173,8 +214,6 @@
       });
     });
   </script>
-
-  <!-- Script for nav toggle (if you want the hamburger on wide screens) -->
   <script src="js/script.js"></script>
 </body>
 </html>
