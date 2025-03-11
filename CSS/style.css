@@ -25,8 +25,8 @@ input:focus, select:focus, textarea:focus {
 }
 
 .submit-button {
-    background-color: #FFD100; /* Gold button /
-    color: #000000; / Black text */
+    background-color: #FFD100; /* Gold button */
+    color: #000000; /* Black text */
     border: none;
     padding: 0.6rem 1.8rem;
     font-size: 0.95rem;
@@ -178,15 +178,15 @@ a:hover {
 
 /* -------------------------------------------------------
    3) Header & Navigation (Left–Center–Right)
---------------------------------------------------------- /
+--------------------------------------------------------- */
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between; / distribute sub-containers horizontally /
+  justify-content: space-between; /* distribute sub-containers horizontally */
   padding: 1rem;
   color: #fff;
   position: relative;
-  / background-color: #003366;  <-- Removed so it doesn't span entire header */
+  /* background-color: #003366;  <-- Removed so it doesn't span entire header */
 }
 
 /* Sub-containers for left, center, right */
@@ -212,12 +212,12 @@ header {
   align-items: center;
 }
 
-/* The .nav-bar-bg class to apply the blue behind nav only /
+/* The .nav-bar-bg class to apply the blue behind nav only */
 .nav-bar-bg {
   background-color: #000000;
-  padding: 0.5rem 1rem;   / Adjust to control bar's height & width /
-  border-radius: 4px;     / Optional for rounded corners /
-  display: flex;          / Ensure the nav items line up properly */
+  padding: 0.5rem 1rem;   /* Adjust to control bar's height & width */
+  border-radius: 4px;     /* Optional for rounded corners */
+  display: flex;          /* Ensure the nav items line up properly */
   align-items: center;
 }
 
@@ -242,11 +242,11 @@ header {
   text-decoration: underline;
 }
 
-/* Right container for the 3 icons + Spenn Lab logo /
+/* Right container for the 3 icons + Spenn Lab logo */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 0.75rem; / space between the icons and the final logo */
+  gap: 0.75rem; /* space between the icons and the final logo */
 }
 
 /* The 3 extra icons (AI, hardware, security) on the right side */
@@ -408,7 +408,7 @@ main {
 
 /* -------------------------------------------------------
    8) Research Interests & Publications
---------------------------------------------------------- /
+--------------------------------------------------------- */
 .research-interests {
   margin-bottom: 2rem;
 }
@@ -430,7 +430,7 @@ main {
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
-  opacity: 1; / Start visible and add animation */
+  opacity: 1; /* Start visible and add animation */
   position: relative;
   overflow: hidden;
 }
@@ -512,7 +512,7 @@ main {
 .interests-card:nth-child(4) { animation-delay: 0.4s; }
 .interests-card:nth-child(5) { animation-delay: 0.5s; }
 
-/* Card icon animations /
+/* Card icon animations */
 .card-icon {
   width: 60px;
   height: 60px;
@@ -522,13 +522,13 @@ main {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  filter: brightness(1) invert(0); / Make icons display in original form /
+  filter: brightness(1) invert(0); /* Make icons display in original form */
 }
 .interests-card:hover .card-icon,
 .interests-card:focus .card-icon,
 .interests-card.touch-active .card-icon {
   transform: rotate(10deg) scale(1.2);
-  filter: invert(80%) sepia(38%) saturate(489%) hue-rotate(359deg) brightness(103%) contrast(103%); / Gold color */
+  filter: invert(80%) sepia(38%) saturate(489%) hue-rotate(359deg) brightness(103%) contrast(103%); /* Gold color */
 }
 
 /* Keyframes animations */
@@ -650,10 +650,10 @@ main {
   margin-bottom: 1rem;
 }
 
-/* Replaced flex with a 2-column grid for .team-cards /
+/* Replaced flex with a 2-column grid for .team-cards */
 .team-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); / exactly 2 columns on larger screens */
+  grid-template-columns: repeat(2, 1fr); /* exactly 2 columns on larger screens */
   gap: 1.5rem;
 }
 
@@ -683,10 +683,10 @@ main {
   flex: 1;
 }
 
-/* Force single column on smaller screens /
+/* Force single column on smaller screens */
 @media (max-width: 768px) {
   .team-cards {
-    grid-template-columns: 1fr; / 1 column on small screens */
+    grid-template-columns: 1fr; /* 1 column on small screens */
   }
 }
 
@@ -703,9 +703,9 @@ footer {
 
 /* -------------------------------------------------------
    13) Responsive (Mobile) - ENHANCED VERSION
---------------------------------------------------------- /
+--------------------------------------------------------- */
 @media (max-width: 768px) {
-  / Improved mobile header */
+  /* Improved mobile header */
   header {
     flex-wrap: wrap;
     padding: 0.5rem;
@@ -739,6 +739,11 @@ footer {
     color: #000;
     background-color: #FFD100;
     border-radius: 4px;
+    min-height: 44px; /* NEW: Better touch target */
+    min-width: 44px; /* NEW: Better touch target */
+    display: flex; /* NEW: Center content */
+    align-items: center; /* NEW: Center content */
+    justify-content: center; /* NEW: Center content */
   }
 
   /* Improved mobile navigation */
@@ -746,9 +751,10 @@ footer {
     width: 100%;
   }
 
+  /* NEW: Enhanced mobile navigation styles */
   #navbar ul {
     flex-direction: column;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.95); /* NEW: More opaque background */
     display: none;
     padding: 0;
     position: absolute;
@@ -761,6 +767,9 @@ footer {
 
   #navbar ul.showNav {
     display: block;
+    max-height: 80vh; /* NEW: Limit height */
+    overflow-y: auto; /* NEW: Enable scrolling if too many items */
+    -webkit-overflow-scrolling: touch; /* NEW: Smooth scrolling on iOS */
   }
 
   #navbar ul li {
@@ -777,6 +786,34 @@ footer {
     padding: 0.8rem 1rem;
     text-align: center;
     width: 100%;
+    min-height: 44px; /* NEW: Ensure touch target size */
+    display: flex; /* NEW: Center content */
+    align-items: center; /* NEW: Center content */
+    justify-content: center; /* NEW: Center content */
+  }
+
+  #navbar a:active,
+  #navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* NEW: Visual feedback */
+  }
+
+  /* NEW: Mobile menu overlay for better visibility */
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .nav-overlay.visible {
+    display: block;
+    opacity: 1;
   }
 
   /* Dramatically reduce icon strip height */
@@ -787,8 +824,9 @@ footer {
   }
 
   .icon-strip img {
-    height: 60px;
+    height: 60px; /* Reduced from 250px */
     width: auto;
+    border-radius: 3px; /* Slightly reduced radius */
   }
 
   /* Hero section improvements */
@@ -797,6 +835,15 @@ footer {
     margin-bottom: 1rem;
     border-radius: 4px;
     flex-direction: column;
+    min-height: auto; /* NEW: Prevent excessive height */
+    max-height: none; /* NEW: Allow content to determine height */
+  }
+
+  /* NEW: Handle background images in hero sections better */
+  .hero-background-image {
+    height: 200px !important; /* Force smaller height */
+    object-fit: cover !important;
+    object-position: center center !important;
   }
 
   .hero-content {
@@ -832,16 +879,18 @@ footer {
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
+    width: 100%; /* NEW: Full width container */
   }
 
   .cta-button {
     display: block;
     width: 90%;
     max-width: 240px;
-    margin: 0 auto;
-    padding: 0.7rem 1rem;
+    margin: 0.5rem auto; /* NEW: More consistent spacing */
+    padding: 0.8rem 1rem; /* NEW: Increased padding for touch targets */
     text-align: center;
     font-size: 0.9rem;
+    min-height: 44px; /* NEW: Ensure touch target size */
   }
 
   /* Main content adjustments */
@@ -970,6 +1019,10 @@ footer {
     border: 1px solid #ddd;
     text-align: center;
     margin-bottom: 0.2rem;
+    min-height: 44px; /* NEW: Ensure touch target size */
+    display: flex; /* NEW: Center content */
+    align-items: center; /* NEW: Center content */
+    justify-content: center; /* NEW: Center content */
   }
 
   .tab-link.active {
@@ -1029,6 +1082,7 @@ footer {
   .submit-button {
     width: 100%;
     padding: 0.7rem;
+    min-height: 44px; /* NEW: Ensure touch target size */
   }
 
   /* Fix issues with tables on mobile */
@@ -1052,16 +1106,16 @@ footer {
 }
 
 /* -------------------------------------------------------
-   16) Additional Mobile Optimizations for Extra Small Devices
---------------------------------------------------------- /
+   14) Additional Mobile Optimizations for Extra Small Devices
+--------------------------------------------------------- */
 @media (max-width: 480px) {
-  / Extra small devices */
+  /* Extra small devices */
   .left-logo, .right-logo {
-    height: 40px;
+    height: 40px; /* Further reduce logos */
   }
 
   .icon-strip img {
-    height: 50px;
+    height: 50px; /* Even smaller icons in strip */
   }
 
   .headline {
@@ -1104,10 +1158,20 @@ footer {
     width: 100%;
     max-width: 220px;
   }
+  
+  /* NEW: Fix navigation for small screens */
+  #navbar ul.showNav {
+    max-height: 70vh; /* Smaller max height */
+  }
+  
+  /* NEW: Reduce background image height further */
+  .hero-background-image {
+    height: 150px !important;
+  }
 }
 
 /* -------------------------------------------------------
-   14) Tab List for Research Page
+   15) Tab List for Research Page
 --------------------------------------------------------- */
 .tab-list {
   display: flex;
@@ -1148,7 +1212,7 @@ footer {
 }
 
 /* -------------------------------------------------------
-   15) Icon Strip
+   16) Icon Strip
 --------------------------------------------------------- */
 .icon-strip {
   display: flex;
@@ -1170,9 +1234,9 @@ footer {
   text-align: center;
 }
 
-/* Meeting Scheduler Section /
+/* Meeting Scheduler Section */
 .meeting-scheduler {
-    background-color: #000000; / Black background */
+    background-color: #000000; /* Black background */
     padding: 2rem 2rem;
     margin: 2rem 0;
     border-radius: 10px;
@@ -1191,15 +1255,15 @@ footer {
     color: #ffffff; /* White text */
 }
 
-/* Form Styling /
+/* Form Styling */
 .form-container {
     max-width: 700px;
     margin: 0 auto;
-    background-color: #f8f9fa; / Light background for the form /
+    background-color: #f8f9fa; /* Light background for the form */
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    border: 1px solid #FFD100; / Gold border */
+    border: 1px solid #FFD100; /* Gold border */
 }
 
 .form-row {
