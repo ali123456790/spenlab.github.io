@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     animation: {
       staggerDelay: {
-        desktop: 150,
-        mobile: 100
+        desktop: 150,  // Animation delay between cards on desktop
+        mobile: 100    // Animation delay between cards on mobile
       }
     },
     isMobile: function() {
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize mobile navigation - ENHANCED
   initMobileNavigation();
 
-  // Initialize interest cards
+  // Initialize interest cards and course cards with animation
   initInterestCards();
 
   // Set up lazy loading - ENHANCED
@@ -194,6 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
    * Interest Cards Functionality
    */
   function initInterestCards() {
+    // Target both research interests cards and course cards with the interests-card class
     const interestCards = document.querySelectorAll('.interests-card');
 
     // Skip if no cards found
@@ -533,8 +534,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const icons = iconStrip.querySelectorAll('img');
       icons.forEach(icon => {
         icon.style.height = config.isMobile() ? 
-          (window.innerWidth <= config.breakpoints.smallMobile ? '50px' : '80px') : 
-          '250px';
+          (window.innerWidth <= config.breakpoints.smallMobile ? '65px' : '100px') : 
+          '130px';  // Increased from 250px to 130px to match CSS
       });
     }
   }
@@ -742,9 +743,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const newIconStrip = document.createElement('section');
         newIconStrip.className = 'icon-strip';
         newIconStrip.innerHTML = `
-          <img src="images/AI.png" alt="AI Icon" id="AI-icon" width="100" height="100" />
-          <img src="images/Hardware.png" alt="Hardware Icon" id="Hardware-icon" width="100" height="100" />
-          <img src="images/Security.png" alt="Security Icon" id="Security-icon" width="100" height="100" />
+          <img src="images/AI.png" alt="AI Icon" id="AI-icon" width="130" height="130" />
+          <img src="images/Hardware.png" alt="Hardware Icon" id="Hardware-icon" width="130" height="130" />
+          <img src="images/Security.png" alt="Security Icon" id="Security-icon" width="130" height="130" />
         `;
         header.after(newIconStrip);
       }
@@ -762,9 +763,9 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!aiIcon || !hardwareIcon || !securityIcon) {
         console.log('Rebuilding icon strip - missing icons detected');
         strip.innerHTML = `
-          <img src="images/AI.png" alt="AI Icon" id="AI-icon" width="100" height="100" />
-          <img src="images/Hardware.png" alt="Hardware Icon" id="Hardware-icon" width="100" height="100" />
-          <img src="images/Security.png" alt="Security Icon" id="Security-icon" width="100" height="100" />
+          <img src="images/AI.png" alt="AI Icon" id="AI-icon" width="130" height="130" />
+          <img src="images/Hardware.png" alt="Hardware Icon" id="Hardware-icon" width="130" height="130" />
+          <img src="images/Security.png" alt="Security Icon" id="Security-icon" width="130" height="130" />
         `;
       }
       
@@ -779,7 +780,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Apply styling to each icon
       const icons = strip.querySelectorAll('img');
-      const iconHeight = window.innerWidth <= 480 ? '50px' : (window.innerWidth <= 768 ? '60px' : '100px');
+      const iconHeight = window.innerWidth <= 480 ? '65px' : (window.innerWidth <= 768 ? '100px' : '130px');
       
       icons.forEach(icon => {
         icon.style.height = iconHeight;
