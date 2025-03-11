@@ -1,3 +1,6 @@
+Here's the complete CSS code with the header issues fixed:
+
+```css
 /* -------------------------------------------------------
    1) Basic CSS Reset
 --------------------------------------------------------- */
@@ -707,60 +710,73 @@ footer {
 @media (max-width: 768px) {
   /* Improved mobile header */
   header {
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Changed from wrap to nowrap */
     padding: 0.5rem;
     justify-content: space-between;
+    align-items: center; /* Ensure vertical alignment */
   }
 
   .header-left, .header-right {
     flex: 0 0 auto;
+    max-width: 40%; /* Limit width to prevent overflow */
   }
 
   /* Significantly reduce logo sizes */
   .left-logo, .right-logo {
-    height: 50px;
+    height: 40px; /* Smaller than before */
     width: auto;
+    object-fit: contain;
   }
 
-  /* Improved header center positioning */
-  .header-center {
-    order: 3;
-    flex-basis: 100%;
-    margin-top: 0.5rem;
-    justify-content: flex-start;
-  }
-
-  /* More visible and touchable hamburger toggle */
+  /* Fix hamburger menu position */
   .nav-toggle {
     display: block;
+    position: absolute; /* Position it absolutely */
+    left: 15px; /* Position from left edge */
+    top: 15px; /* Position from top */
     margin: 0;
     padding: 0.5rem;
     font-size: 1.5rem;
     color: #000;
     background-color: #FFD100;
     border-radius: 4px;
+    z-index: 101; /* Ensure it's above other elements */
   }
 
-  /* Improved mobile navigation */
-  #navbar {
-    width: 100%;
+  /* Hide the icon strip completely on mobile */
+  .icon-strip {
+    display: none; /* Remove completely */
   }
 
-  #navbar ul {
-    flex-direction: column;
-    background-color: #000000;
-    display: none;
-    padding: 0;
-    position: absolute;
-    top: 100%;
+  /* Fix navigation dropdown position */
+  #navbar ul.showNav {
+    display: block;
+    position: fixed; /* Changed from absolute to fixed */
+    top: 60px; /* Position below the header */
     left: 0;
     right: 0;
     z-index: 100;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   }
 
-  #navbar ul.showNav {
-    display: block;
+  /* Improved header center positioning */
+  .header-center {
+    position: absolute; /* Take it out of the flow */
+    top: 65px; /* Position below the header */
+    left: 0;
+    width: 100%;
+    order: 3;
+    justify-content: center;
+    z-index: 50;
+  }
+
+  /* When navigation is open */
+  .header-center.menu-open {
+    z-index: 102; /* Bring it above other content */
+  }
+
+  /* Make nav menu use the full width */
+  #navbar {
+    width: 100%;
   }
 
   #navbar ul li {
@@ -777,18 +793,6 @@ footer {
     padding: 0.8rem 1rem;
     text-align: center;
     width: 100%;
-  }
-
-  /* Dramatically reduce icon strip height */
-  .icon-strip {
-    padding: 0.5rem 0;
-    gap: 0.5rem;
-    overflow: hidden;
-  }
-
-  .icon-strip img {
-    height: 60px;
-    width: auto;
   }
 
   /* Hero section improvements */
@@ -1057,7 +1061,7 @@ footer {
 @media (max-width: 480px) {
   /* Extra small devices */
   .left-logo, .right-logo {
-    height: 40px;
+    height: 35px; /* Further reduced */
   }
 
   .icon-strip img {
