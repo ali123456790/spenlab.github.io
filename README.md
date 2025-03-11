@@ -151,4 +151,4 @@ For questions about this repository or website:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+This project is licensed under the USM License - 
