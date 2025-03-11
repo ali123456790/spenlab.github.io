@@ -1,6 +1,6 @@
 /**
- * Spen Lab Website - Mobile-Optimized JavaScript
- * Version: 1.1.0
+ * Spen Lab Website - Enhanced Mobile-Optimized JavaScript
+ * Version: 1.2.0
  * Last Updated: 2025-03-11
  */
 
@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  // Initialize mobile navigation
+  // Initialize mobile navigation - ENHANCED
   initMobileNavigation();
 
   // Initialize interest cards
   initInterestCards();
 
-  // Set up lazy loading
+  // Set up lazy loading - ENHANCED
   initLazyLoading();
 
   // Add smooth scrolling
@@ -41,18 +41,28 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update footer year
   updateFooterYear();
 
-  // Handle preloader
+  // Handle preloader - ENHANCED
   handlePreloader();
 
   // Add touch device detection
   detectTouchDevice();
 
+  // Initialize Tab Navigation (if present)
+  initTabNavigation();
+
+  // Fix background image sizing for mobile - NEW
+  fixBackgroundImageSizing();
+
+  // Fix button sizing and layout for mobile - NEW
+  optimizeButtonsForMobile();
+
   /**
-   * Mobile Navigation Functionality
+   * Enhanced Mobile Navigation Functionality
    */
   function initMobileNavigation() {
     const navToggle = document.getElementById('navToggle');
     const navbar = document.getElementById('navbar')?.querySelector('ul');
+    const header = document.querySelector('header');
 
     if (!navToggle || !navbar) return;
 
@@ -61,9 +71,17 @@ document.addEventListener('DOMContentLoaded', function() {
     navToggle.setAttribute('aria-controls', 'navbar');
     navToggle.setAttribute('aria-label', 'Toggle navigation menu');
 
+    // Make sure the toggle button is visible and properly styled on mobile
+    if (config.isMobile()) {
+      navToggle.style.display = 'block';
+      // Ensure that the nav is initially hidden on mobile
+      navbar.classList.remove('showNav');
+    }
+
     // Toggle navigation menu
     navToggle.addEventListener('click', function(e) {
       e.preventDefault();
+      e.stopPropagation(); // Prevent event bubbling
 
       const isExpanded = navbar.classList.contains('showNav');
       navbar.classList.toggle('showNav');
@@ -71,9 +89,59 @@ document.addEventListener('DOMContentLoaded', function() {
       // Update ARIA attribute
       navToggle.setAttribute('aria-expanded', !isExpanded);
 
-      // Prevent body scrolling when menu is open
-      document.body.style.overflow = !isExpanded ? 'hidden' : '';
+      // Add overlay when menu is open
+      if (!isExpanded) {
+        // Create overlay if it doesn't exist
+        let overlay = document.querySelector('.nav-overlay');
+        if (!overlay) {
+          overlay = document.createElement('div');
+          overlay.className = 'nav-overlay';
+          document.body.appendChild(overlay);
+          
+          // Add fade in animation
+          setTimeout(() => {
+            overlay.style.opacity = '1';
+          }, 10);
+          
+          // Close menu when overlay is clicked
+          overlay.addEventListener('click', closeMenu);
+        } else {
+          overlay.style.display = 'block';
+          setTimeout(() => {
+            overlay.style.opacity = '1';
+          }, 10);
+        }
+        
+        // Prevent body scrolling when menu is open
+        document.body.style.overflow = 'hidden';
+      } else {
+        removeOverlay();
+        document.body.style.overflow = '';
+      }
+
+      // Apply scrollable menu if content exceeds viewport height
+      if (!isExpanded && navbar.scrollHeight > window.innerHeight) {
+        navbar.style.maxHeight = `${window.innerHeight - header.offsetHeight}px`;
+        navbar.style.overflowY = 'auto';
+      }
     });
+
+    function closeMenu() {
+      navbar.classList.remove('showNav');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      removeOverlay();
+    }
+
+    function removeOverlay() {
+      const overlay = document.querySelector('.nav-overlay');
+      if (overlay) {
+        overlay.style.opacity = '0';
+        setTimeout(() => {
+          overlay.style.display = 'none';
+        }, 300); // Match this to your CSS transition time
+      }
+    }
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
@@ -81,9 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const isClickOnToggle = navToggle.contains(e.target);
 
       if (navbar.classList.contains('showNav') && !isClickInsideNav && !isClickOnToggle) {
-        navbar.classList.remove('showNav');
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        closeMenu();
       }
     });
 
@@ -91,20 +157,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = navbar.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        navbar.classList.remove('showNav');
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        // Delay menu closing if it's a smooth scroll to an anchor
+        if (link.getAttribute('href').startsWith('#')) {
+          setTimeout(closeMenu, 100);
+        } else {
+          closeMenu();
+        }
       });
     });
 
     // Handle resize events
     window.addEventListener('resize', function() {
       if (window.innerWidth > config.breakpoints.mobile && navbar.classList.contains('showNav')) {
-        navbar.classList.remove('showNav');
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        closeMenu();
+      }
+      
+      // Dynamically adjust nav styling based on viewport
+      if (config.isMobile()) {
+        navToggle.style.display = 'block';
+      } else {
+        navToggle.style.display = 'none';
+        navbar.style.maxHeight = '';
+        navbar.style.overflowY = '';
       }
     });
+    
+    // Initial check for proper display
+    if (config.isMobile()) {
+      navToggle.style.display = 'block';
+    } else {
+      navToggle.style.display = 'none';
+    }
   }
 
   /**
@@ -168,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /**
-   * Lazy Loading for Images
+   * Enhanced Lazy Loading for Images
    */
   function initLazyLoading() {
     const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
@@ -188,6 +271,13 @@ document.addEventListener('DOMContentLoaded', function() {
             img.onload = function() {
               lazyImage.src = lazyImage.dataset.src;
               lazyImage.classList.add('loaded');
+              
+              // If this is a header or hero image, add special handling
+              if (lazyImage.classList.contains('hero-background') || 
+                  lazyImage.closest('.hero') || 
+                  lazyImage.closest('header')) {
+                optimizeHeroImage(lazyImage);
+              }
             };
             img.onerror = function() {
               console.error('Failed to load image:', lazyImage.dataset.src);
@@ -196,12 +286,15 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             img.src = lazyImage.dataset.src;
 
+            // Remove data-src to prevent double-loading
+            lazyImage.removeAttribute('data-src');
+            
             // Stop observing once loaded
             lazyImageObserver.unobserve(lazyImage);
           }
         });
       }, {
-        rootMargin: '50px 0px',
+        rootMargin: '100px 0px', // Increased margin to load earlier
         threshold: 0.01
       });
 
@@ -213,7 +306,18 @@ document.addEventListener('DOMContentLoaded', function() {
       lazyImages.forEach(function(lazyImage) {
         lazyImage.src = lazyImage.dataset.src;
         lazyImage.classList.add('loaded');
+        lazyImage.removeAttribute('data-src');
       });
+    }
+    
+    // Special handling for hero images
+    function optimizeHeroImage(img) {
+      // For very small screens, adjust hero image
+      if (window.innerWidth <= config.breakpoints.smallMobile) {
+        img.style.objectPosition = 'center center';
+        img.style.objectFit = 'cover';
+        img.style.maxHeight = '200px';
+      }
     }
   }
 
@@ -232,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // Calculate offset based on header height
           const header = document.querySelector('header');
           const headerOffset = header ? header.offsetHeight : 0;
-          const extraPadding = 20; // Additional padding
+          const extraPadding = config.isMobile() ? 10 : 20; // Less padding on mobile
 
           const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
           const offsetPosition = targetPosition - headerOffset - extraPadding;
@@ -265,55 +369,50 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /**
-   * Handle Preloader
+   * Enhanced Preloader
    */
   function handlePreloader() {
-    // List of critical images to preload
-    const imageUrls = [
+    // List of critical images to preload (priority loading)
+    const criticalImageUrls = [
+      'images/logo.png',
+      'images/2.png'
+    ];
+    
+    // Secondary images (non-blocking)
+    const secondaryImageUrls = [
       'images/Security Icon.png',
       'images/Hardware.png',
       'images/Privacy Icon.png',
       'images/AI.png',
       'images/Networks Icon.png',
-      'images/Security.png',
-      'images/logo.png',
-      'images/2.png'
+      'images/Security.png'
     ];
 
     // Track loaded images
-    let loadedCount = 0;
-    const totalImages = imageUrls.length;
+    let criticalLoaded = 0;
+    const totalCritical = criticalImageUrls.length;
 
-    // Preload all required images
-    imageUrls.forEach(url => {
+    // Preload critical images first
+    criticalImageUrls.forEach(url => {
       const img = new Image();
       img.src = url;
 
-      img.onload = function() {
-        loadedCount++;
-        if (loadedCount === totalImages) {
-          hidePreloader();
-        }
-      };
-
-      img.onerror = function() {
-        console.error('Failed to load image:', url);
-        loadedCount++;
-        if (loadedCount === totalImages) {
-          hidePreloader();
+      img.onload = img.onerror = function() {
+        criticalLoaded++;
+        if (criticalLoaded === totalCritical) {
+          // Show minimum content when critical images are loaded
+          showMinimumContent();
+          
+          // Then load secondary images
+          loadSecondaryImages();
         }
       };
     });
 
-    // Hide preloader after all images load or after timeout
-    const preloader = document.querySelector('.preloader');
-    if (preloader) {
-      // Set a maximum time to wait before hiding the preloader anyway
-      setTimeout(hidePreloader, 3000);
-    }
-
-    function hidePreloader() {
-      if (preloader && !preloader.classList.contains('loaded')) {
+    function showMinimumContent() {
+      // Hide preloader after critical images load
+      const preloader = document.querySelector('.preloader');
+      if (preloader) {
         preloader.classList.add('loaded');
 
         // Remove preloader from DOM after transition completes
@@ -321,7 +420,24 @@ document.addEventListener('DOMContentLoaded', function() {
           preloader.style.display = 'none';
         }, 500);
       }
+      
+      // Make sure header and main navigation are visible
+      const header = document.querySelector('header');
+      if (header) {
+        header.style.visibility = 'visible';
+        header.style.opacity = '1';
+      }
     }
+    
+    function loadSecondaryImages() {
+      secondaryImageUrls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+      });
+    }
+
+    // Set a maximum time to wait before showing content anyway
+    setTimeout(showMinimumContent, 2000); // Reduced from 3000 to 2000ms
   }
 
   /**
@@ -341,23 +457,119 @@ document.addEventListener('DOMContentLoaded', function() {
   /**
    * Initialize Tab Navigation (if present)
    */
-  const tabLinks = document.querySelectorAll('.tab-link');
-  if (tabLinks.length > 0) {
-    tabLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        // Remove "active" from all links
-        tabLinks.forEach(l => l.classList.remove('active'));
+  function initTabNavigation() {
+    const tabLinks = document.querySelectorAll('.tab-link');
+    if (tabLinks.length > 0) {
+      // Make tabs more touchable on mobile
+      if (config.isMobile()) {
+        tabLinks.forEach(link => {
+          link.style.padding = '0.8rem 1rem';
+          link.style.minHeight = '44px';
+        });
+      }
+      
+      tabLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          // Remove "active" from all links
+          tabLinks.forEach(l => l.classList.remove('active'));
 
-        // Remove "active" from all tab contents
-        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+          // Remove "active" from all tab contents
+          document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
 
-        // Add "active" to clicked link
-        link.classList.add('active');
+          // Add "active" to clicked link
+          link.classList.add('active');
 
-        // Get the tab ID and activate matching content
-        const tabID = link.getAttribute('data-tab');
-        document.getElementById(tabID)?.classList.add('active');
+          // Get the tab ID and activate matching content
+          const tabID = link.getAttribute('data-tab');
+          const tabContent = document.getElementById(tabID);
+          
+          if (tabContent) {
+            tabContent.classList.add('active');
+            
+            // Scroll to tab content on mobile for better UX
+            if (config.isMobile()) {
+              setTimeout(() => {
+                const tabsTop = tabContent.getBoundingClientRect().top + window.pageYOffset;
+                const header = document.querySelector('header');
+                const headerOffset = header ? header.offsetHeight : 0;
+                
+                window.scrollTo({
+                  top: tabsTop - headerOffset - 20,
+                  behavior: 'smooth'
+                });
+              }, 100);
+            }
+          }
+        });
       });
+    }
+  }
+
+  /**
+   * Fix background image sizing for mobile - NEW
+   */
+  function fixBackgroundImageSizing() {
+    const heroSection = document.querySelector('.hero');
+    const heroBackground = document.querySelector('.hero-background-image');
+    
+    if (heroSection && config.isMobile()) {
+      // Adjust hero section height for mobile
+      heroSection.style.minHeight = 'auto';
+      heroSection.style.maxHeight = '50vh';
+      
+      // If there's a background image, optimize it
+      if (heroBackground) {
+        heroBackground.style.height = '200px';
+        heroBackground.style.objectFit = 'cover';
+        heroBackground.style.objectPosition = 'center center';
+      }
+    }
+    
+    // Also fix the icon strip for mobile
+    const iconStrip = document.querySelector('.icon-strip');
+    if (iconStrip && config.isMobile()) {
+      // Make icon strip more compact on mobile
+      iconStrip.style.padding = '0.5rem 0';
+      const icons = iconStrip.querySelectorAll('img');
+      icons.forEach(icon => {
+        icon.style.height = config.isMobile() ? 
+          (window.innerWidth <= config.breakpoints.smallMobile ? '50px' : '80px') : 
+          '250px';
+      });
+    }
+  }
+
+  /**
+   * Fix button sizing and layout for mobile - NEW
+   */
+  function optimizeButtonsForMobile() {
+    if (!config.isMobile()) return;
+    
+    // Optimize CTA buttons
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(button => {
+      button.style.width = '100%';
+      button.style.maxWidth = '280px';
+      button.style.margin = '0.5rem auto';
+      button.style.padding = '0.8rem 1rem';
+      button.style.minHeight = '44px'; // Recommended minimum touch target size
+      button.style.display = 'block';
+      button.style.textAlign = 'center';
+    });
+    
+    // Fix hero buttons container
+    const heroButtons = document.querySelector('.hero-buttons');
+    if (heroButtons) {
+      heroButtons.style.flexDirection = 'column';
+      heroButtons.style.alignItems = 'center';
+    }
+    
+    // Make form submit buttons more touchable
+    const submitButtons = document.querySelectorAll('.submit-button, button[type="submit"]');
+    submitButtons.forEach(button => {
+      button.style.width = '100%';
+      button.style.minHeight = '44px';
+      button.style.padding = '0.8rem 1rem';
     });
   }
 });
@@ -377,6 +589,23 @@ window.addEventListener('resize', function() {
   // Set a timeout to remove the class after resizing is complete
   resizeTimer = setTimeout(() => {
     document.body.classList.remove('resize-animation-stopper');
+    
+    // Force reload critical elements after resize (fixes some layout issues)
+    const navToggle = document.getElementById('navToggle');
+    const navbar = document.getElementById('navbar')?.querySelector('ul');
+    
+    if (navToggle && navbar) {
+      if (window.innerWidth <= 768) {
+        navToggle.style.display = 'block';
+        if (navbar.classList.contains('showNav')) {
+          navbar.style.maxHeight = `${window.innerHeight - document.querySelector('header').offsetHeight}px`;
+        }
+      } else {
+        navToggle.style.display = 'none';
+        navbar.style.maxHeight = '';
+        navbar.style.overflowY = '';
+      }
+    }
   }, 400);
 });
 
@@ -385,10 +614,115 @@ window.addEventListener('orientationchange', function() {
   // Force close the navigation menu on orientation change
   const navbar = document.getElementById('navbar')?.querySelector('ul');
   const navToggle = document.getElementById('navToggle');
+  const overlay = document.querySelector('.nav-overlay');
 
   if (navbar && navbar.classList.contains('showNav')) {
     navbar.classList.remove('showNav');
     if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    
+    if (overlay) {
+      overlay.style.opacity = '0';
+      setTimeout(() => {
+        overlay.style.display = 'none';
+      }, 300);
+    }
   }
+  
+  // After orientation change completes, fix any layout issues
+  setTimeout(() => {
+    if (window.innerWidth <= 768) {
+      // Adjust mobile-specific elements
+      const iconStrip = document.querySelector('.icon-strip');
+      if (iconStrip) {
+        const icons = iconStrip.querySelectorAll('img');
+        icons.forEach(icon => {
+          icon.style.height = window.innerWidth <= 480 ? '50px' : '80px';
+        });
+      }
+      
+      // Make sure the navbar toggle is visible
+      if (navToggle) navToggle.style.display = 'block';
+    }
+  }, 300);
 });
+
+// Add CSS for the overlay (creating it in JS to avoid modifying HTML/CSS files)
+(function addOverlayStyles() {
+  const style = document.createElement('style');
+  style.textContent = `
+    .nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 99;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    @media (max-width: 768px) {
+      #navbar ul.showNav {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 100;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      #navbar ul.showNav li {
+        margin: 0;
+        padding: 0;
+      }
+      
+      #navbar ul.showNav a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+        text-align: center;
+        min-height: 44px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      
+      #navbar ul.showNav a:active,
+      #navbar ul.showNav a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      .header-left img,
+      .header-right img {
+        max-height: 40px;
+        width: auto;
+      }
+      
+      .nav-toggle {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .hero {
+        padding: 1.5rem 1rem;
+      }
+      
+      .headline {
+        font-size: 1.5rem;
+      }
+      
+      .sub-headline {
+        font-size: 1rem;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+})();
