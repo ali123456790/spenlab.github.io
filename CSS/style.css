@@ -582,6 +582,68 @@ main {
   color: #000000;
 }
 
+/* Publication Resources Styles */
+.publication-resources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+.resource-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    color: #333;
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.resource-link:hover, .resource-link:focus {
+    background-color: #f0f0f0;
+    border-color: #cfb53b;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.resource-link:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.resource-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.paper-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='%23555' d='M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z'/%3E%3C/svg%3E");
+}
+
+/* Mobile adjustments for publication resources */
+@media screen and (max-width: 768px) {
+    .publication-resources {
+        flex-direction: column;
+        gap: 8px;
+        padding-left: 10px;
+    }
+    
+    .resource-link {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+}
+
 /* -------------------------------------------------------
    9) Teaching Page: Course Cards
 --------------------------------------------------------- */
@@ -1437,4 +1499,354 @@ input, select, textarea {
 .tab-content.active {
   display: block;
   background-color: #fff;
+}
+
+/* Team page specific styles */
+.team-hero {
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.team-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Director section */
+.director-section {
+  margin: 3rem auto;
+  max-width: 1000px;
+  padding: 0 1.5rem;
+}
+
+.director-profile {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.director-image {
+  flex: 0 0 220px;
+}
+
+.director-image img {
+  width: 100%;
+  border-radius: 8px;
+  border: 3px solid #FFD100;
+}
+
+.director-info {
+  flex: 1;
+}
+
+.director-info h3 {
+  color: #000000;
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.director-title {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.director-bio {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.director-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Team intro section */
+.team-intro {
+  max-width: 1000px;
+  margin: 2rem auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.team-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Team statistics */
+.team-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000;
+  color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  min-width: 150px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Team cards improvements */
+.team-group {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.team-group h2 {
+  color: #000000;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.team-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.team-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 3px solid #ffcc00;
+}
+
+.profile-info {
+  padding: 1.5rem;
+}
+
+.profile-info h3 {
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.profile-title {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.profile-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.profile-link {
+  display: inline-flex;
+  align-items: center;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.profile-link i {
+  margin-right: 0.5rem;
+}
+
+.profile-link:hover {
+  color: #ffcc00;
+}
+
+/* Research highlights section */
+.research-highlights {
+  background-color: #f8f9fa;
+  padding: 3rem 1.5rem;
+  margin: 3rem 0;
+}
+
+.research-highlights h2 {
+  text-align: center;
+  color: #000000;
+  margin-bottom: 2.5rem;
+}
+
+.highlights-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.highlight-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+}
+
+.highlight-icon {
+  font-size: 2.5rem;
+  color: #ffcc00;
+  margin-bottom: 1.5rem;
+}
+
+.highlight-card h3 {
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.highlight-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Join our team section */
+.join-team {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.join-team h2 {
+  color: #000000;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.join-content {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.join-info {
+  flex: 1;
+}
+
+.join-info p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.join-info h3 {
+  color: #000000;
+  margin: 1.5rem 0 1rem;
+}
+
+.join-info ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.join-info ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.join-image {
+  flex: 0 0 400px;
+}
+
+.join-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive styles for team page */
+@media (max-width: 992px) {
+  .director-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .director-image {
+    margin-bottom: 1.5rem;
+  }
+  
+  .director-links {
+    justify-content: center;
+  }
+  
+  .join-content {
+    flex-direction: column;
+  }
+  
+  .join-image {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-hero {
+    padding: 2rem 1rem;
+  }
+  
+  .team-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .team-stats {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .stat-box {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .highlights-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-info h3 {
+    font-size: 1.3rem;
+  }
 }
