@@ -67,8 +67,8 @@
     <section class="intro">
       <h2>About Spen Lab</h2>
       <p>
-        The Security and Privacy of Emerging Networks (SPEN) Research Lab is an interdisciplinary 
-        research group dedicated to advancing cutting-edge technologies in cybersecurity, privacy, 
+        The Security and Privacy of Emerging Networks (SPEN) Research Lab is an interdisciplinary
+        research group dedicated to advancing cutting-edge technologies in cybersecurity, privacy,
         and networked systems. We develop novel methods for secure data sharing, enhance IoT security,
         and forge collaborations that drive real-world impact.
       </p>
@@ -97,7 +97,7 @@
 
           <p>
             Dr. Ahmed Sherif is the founder and director of the Security and Privacy of Emerging Networks (SPEN)
-            Research Lab at USM. He joined USM on September 1, 2018, and leads a diverse team of graduate 
+            Research Lab at USM. He joined USM on September 1, 2018, and leads a diverse team of graduate
             and undergraduate students in pioneering research across several cutting-edge fields.
           </p>
 
@@ -113,7 +113,7 @@
             Grade: Excellent with honor<br>
             GPA: 3.7/4.0</li>
           </ul>
-          
+
           <h4>Awards and Recognition</h4>
           <ul>
             <li>Aubrey Keith and Ella Ginn Lucas Endowment for Faculty Excellence Award, USM (2022)</li>
@@ -144,7 +144,7 @@
       </div>
     </section>
 
-    
+
   </main>
 
   <!-- Meeting Scheduler Section -->
@@ -152,7 +152,9 @@
     <h2>Schedule a Meeting</h2>
     <p>Please fill out this form to schedule a meeting with our team. We'll get back to you with confirmation shortly.</p>
     <div class="form-container">
-      <form id="meeting-form" action="mailto:Ahmed.Sherif@usm.edu" method="POST" enctype="text/plain">
+      <form id="meeting-form" method="POST" action="https://formspree.io/f/mldjewvq">
+        <input type="hidden" name="_subject" value="Meeting Request from SPEN Lab Website">
+        <input type="hidden" name="_next" value="thanks.html">
         <div class="form-row">
           <div class="form-group">
             <label for="firstName">First Name</label>
@@ -166,7 +168,7 @@
 
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="_replyto" required>
         </div>
 
         <div class="form-group">
@@ -194,7 +196,7 @@
           <label for="notes">Additional Notes</label>
           <textarea id="notes" name="notes" rows="3"></textarea>
         </div>
-
+        
         <div class="form-submit">
           <button type="submit" class="submit-button">Schedule Meeting</button>
         </div>
