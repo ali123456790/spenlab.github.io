@@ -797,16 +797,13 @@ main {
 .team-card {
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 6px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.team-card.detailed-profile {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
 }
 
 .team-card img {
@@ -814,12 +811,11 @@ main {
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
+  border: 3px solid #FFD100;
   margin-bottom: 1rem;
-  border: 2px solid #FFD100;
 }
 
 .profile-info {
-  padding: 0.5rem;
   text-align: center;
   width: 100%;
 }
@@ -827,46 +823,68 @@ main {
 .profile-info h3 {
   color: #000000;
   margin-top: 0;
-  margin-bottom: 0.3rem;
-  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
 }
 
 .profile-title {
   color: #555;
   font-style: italic;
-  margin-bottom: 0.8rem;
-  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .profile-links {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 
-/* Tablet and desktop styles */
-@media (min-width: 768px) {
-  .team-card.detailed-profile {
-    flex-direction: row;
-    text-align: left;
-    align-items: flex-start;
+.profile-link {
+  color: #000000;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.profile-link i {
+  margin-right: 0.3rem;
+  font-size: 1.1rem;
+}
+
+.profile-link:hover {
+  color: #FFD100;
+  text-decoration: underline;
+}
+
+/* Research focus and current project */
+.research-focus, .current-project {
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.research-focus h4, .current-project h4 {
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 0.3rem;
+}
+
+.research-focus p, .current-project p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .team-cards {
+    grid-template-columns: 1fr;
   }
   
   .team-card img {
     width: 120px;
     height: 120px;
-    margin-right: 1rem;
-    margin-bottom: 0;
-  }
-  
-  .profile-info {
-    text-align: left;
-    padding: 0;
-  }
-  
-  .profile-links {
-    justify-content: flex-start;
   }
 }
 
@@ -1726,18 +1744,22 @@ input, select, textarea {
 
 .profile-links {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .profile-link {
   color: #000000;
   text-decoration: none;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
 }
 
 .profile-link i {
   margin-right: 0.3rem;
+  font-size: 1.1rem;
 }
 
 .profile-link:hover {
