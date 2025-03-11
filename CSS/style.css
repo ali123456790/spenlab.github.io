@@ -187,6 +187,7 @@ header {
   color: #fff;
   position: relative;
   /* background-color: #003366;  <-- Removed so it doesn't span entire header */
+  max-height: 120px; /* FIXED: Limit header height for desktop */
 }
 
 /* Sub-containers for left, center, right */
@@ -199,7 +200,7 @@ header {
 
 /* Left logo (Southern Miss) */
 .left-logo {
-  height: 150px;
+  height: 80px; /* FIXED: Reduced from 150px for desktop */
   width: auto;
 }
 
@@ -258,7 +259,7 @@ header {
 
 /* The Spenn Lab logo on the far right */
 .right-logo {
-  height: 150px;
+  height: 80px; /* FIXED: Reduced from 150px for desktop */
   width: auto;
 }
 
@@ -276,7 +277,7 @@ header {
    4) General Layout
 --------------------------------------------------------- */
 main {
-  max-width: 1000px;
+  max-width: 1200px; /* FIXED: Increased from 1000px for better desktop layout */
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -290,7 +291,7 @@ main {
 }
 
 .intro {
-  margin: 2rem 0;
+  margin: 1.5rem 0; /* FIXED: Reduced from 2rem for better spacing */
 }
 
 /* -------------------------------------------------------
@@ -299,14 +300,15 @@ main {
 .hero {
   background-color: #000000;
   color: #fff;
-  padding: 3rem 1rem;
-  margin-bottom: 2rem;
+  padding: 2rem 1rem; /* FIXED: Reduced from 3rem for better spacing */
+  margin-bottom: 1.5rem; /* FIXED: Reduced from 2rem */
   border-radius: 6px;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  min-height: auto; /* FIXED: Allow content to determine height */
 }
 
 .home-hero { /* custom or blank for now */ }
@@ -383,7 +385,7 @@ main {
    7) Updates & Article Lists
 --------------------------------------------------------- */
 .page-title {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* FIXED: Reduced from 2rem */
   text-align: center;
 }
 
@@ -410,18 +412,19 @@ main {
    8) Research Interests & Publications
 --------------------------------------------------------- */
 .research-interests {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* FIXED: Reduced from 2rem */
 }
 .interests-intro {
-  max-width: 700px;
+  max-width: 800px; /* FIXED: Increased from 700px */
   margin: 0.5rem auto 1rem;
   line-height: 1.4;
   text-align: center;
 }
 .interests-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* FIXED: Increased from 280px */
   gap: 1.5rem;
+  margin: 0 auto; /* FIXED: Center the grid */
 }
 .interests-card {
   background-color: #000000;
@@ -433,6 +436,7 @@ main {
   opacity: 1; /* Start visible and add animation */
   position: relative;
   overflow: hidden;
+  height: 100%; /* FIXED: Make all cards same height */
 }
 
 /* Yellow accent border on left side */
@@ -544,7 +548,7 @@ main {
 }
 
 .publications-section {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* FIXED: Reduced from 2rem */
 }
 .publications-section h2 {
   color: #000000;
@@ -582,7 +586,7 @@ main {
    9) Teaching Page: Course Cards
 --------------------------------------------------------- */
 .course-level {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* FIXED: Reduced from 2rem */
 }
 .course-level h3 {
   color: #000000;
@@ -590,7 +594,7 @@ main {
 }
 .course-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* FIXED: Increased from 280px */
   gap: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -600,6 +604,7 @@ main {
   border-radius: 6px;
   padding: 1.5rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  height: 100%; /* FIXED: Make all cards same height */
 }
 .course-icon {
   width: 100%;
@@ -643,7 +648,7 @@ main {
    11) Team Page – KEY CHANGES for 2-column layout
 --------------------------------------------------------- */
 .team-group {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* FIXED: Reduced from 2rem */
 }
 .team-group h3 {
   color: #000000;
@@ -664,6 +669,7 @@ main {
   border-radius: 6px;
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+  height: 100%; /* FIXED: Make all cards same height */
 }
 
 /* For side-by-side layout inside each card (image left, text right) */
@@ -698,11 +704,101 @@ footer {
   padding: 1rem;
   background-color: #000000;
   color: #fff;
-  margin-top: 2rem;
+  margin-top: 1.5rem; /* FIXED: Reduced from 2rem */
 }
 
 /* -------------------------------------------------------
-   13) Responsive (Mobile) - ENHANCED VERSION
+   13) Icon Strip - FIXED FOR DESKTOP
+--------------------------------------------------------- */
+.icon-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* FIXED: Increased from 1rem for better spacing */
+  background-color: #000000;
+  padding: 1rem 0;
+  max-height: 120px; /* FIXED: Limit height for desktop */
+  overflow: hidden;
+}
+.icon-strip img {
+  height: 100px; /* FIXED: Reduced from 250px */
+  width: auto;
+  border-radius: 4px;
+}
+
+/* Center just the heading and intro text */
+.research-interests h2,
+.research-interests .interests-intro {
+  text-align: center;
+}
+
+/* Meeting Scheduler Section */
+.meeting-scheduler {
+    background-color: #000000; /* Black background */
+    padding: 2rem 2rem;
+    margin: 1.5rem 0; /* FIXED: Reduced from 2rem */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.meeting-scheduler h2 {
+    color: #FFD100; /* Gold heading */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.meeting-scheduler p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ffffff; /* White text */
+}
+
+/* Form Styling */
+.form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f8f9fa; /* Light background for the form */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border: 1px solid #FFD100; /* Gold border */
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.form-row .form-group {
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+/* -------------------------------------------------------
+   14) Responsive (Mobile) - ENHANCED VERSION
 --------------------------------------------------------- */
 @media (max-width: 768px) {
   /* Improved mobile header */
@@ -710,6 +806,7 @@ footer {
     flex-wrap: wrap;
     padding: 0.5rem;
     justify-content: space-between;
+    max-height: none; /* Allow height to be determined by content on mobile */
   }
 
   .header-left, .header-right {
@@ -739,6 +836,11 @@ footer {
     color: #000;
     background-color: #FFD100;
     border-radius: 4px;
+    min-height: 44px; /* Better touch target */
+    min-width: 44px; /* Better touch target */
+    display: flex; /* Center content */
+    align-items: center; /* Center content */
+    justify-content: center; /* Center content */
   }
 
   /* Improved mobile navigation */
@@ -746,9 +848,10 @@ footer {
     width: 100%;
   }
 
+  /* Enhanced mobile navigation styles */
   #navbar ul {
     flex-direction: column;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.95); /* More opaque background */
     display: none;
     padding: 0;
     position: absolute;
@@ -761,6 +864,9 @@ footer {
 
   #navbar ul.showNav {
     display: block;
+    max-height: 80vh; /* Limit height */
+    overflow-y: auto; /* Enable scrolling if too many items */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   }
 
   #navbar ul li {
@@ -777,6 +883,34 @@ footer {
     padding: 0.8rem 1rem;
     text-align: center;
     width: 100%;
+    min-height: 44px; /* Ensure touch target size */
+    display: flex; /* Center content */
+    align-items: center; /* Center content */
+    justify-content: center; /* Center content */
+  }
+
+  #navbar a:active,
+  #navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Visual feedback */
+  }
+
+  /* Mobile menu overlay for better visibility */
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .nav-overlay.visible {
+    display: block;
+    opacity: 1;
   }
 
   /* Dramatically reduce icon strip height */
@@ -784,11 +918,13 @@ footer {
     padding: 0.5rem 0;
     gap: 0.5rem;
     overflow: hidden;
+    max-height: none; /* Remove max-height limit on mobile */
   }
 
   .icon-strip img {
-    height: 60px;
+    height: 60px; /* Reduced from 100px */
     width: auto;
+    border-radius: 3px; /* Slightly reduced radius */
   }
 
   /* Hero section improvements */
@@ -797,6 +933,15 @@ footer {
     margin-bottom: 1rem;
     border-radius: 4px;
     flex-direction: column;
+    min-height: auto; /* Prevent excessive height */
+    max-height: none; /* Allow content to determine height */
+  }
+
+  /* Handle background images in hero sections better */
+  .hero-background-image {
+    height: 200px !important; /* Force smaller height */
+    object-fit: cover !important;
+    object-position: center center !important;
   }
 
   .hero-content {
@@ -832,16 +977,18 @@ footer {
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
+    width: 100%; /* Full width container */
   }
 
   .cta-button {
     display: block;
     width: 90%;
     max-width: 240px;
-    margin: 0 auto;
-    padding: 0.7rem 1rem;
+    margin: 0.5rem auto; /* More consistent spacing */
+    padding: 0.8rem 1rem; /* Increased padding for touch targets */
     text-align: center;
     font-size: 0.9rem;
+    min-height: 44px; /* Ensure touch target size */
   }
 
   /* Main content adjustments */
@@ -970,6 +1117,10 @@ footer {
     border: 1px solid #ddd;
     text-align: center;
     margin-bottom: 0.2rem;
+    min-height: 44px; /* Ensure touch target size */
+    display: flex; /* Center content */
+    align-items: center; /* Center content */
+    justify-content: center; /* Center content */
   }
 
   .tab-link.active {
@@ -1029,6 +1180,7 @@ footer {
   .submit-button {
     width: 100%;
     padding: 0.7rem;
+    min-height: 44px; /* Ensure touch target size */
   }
 
   /* Fix issues with tables on mobile */
@@ -1052,16 +1204,16 @@ footer {
 }
 
 /* -------------------------------------------------------
-   16) Additional Mobile Optimizations for Extra Small Devices
+   15) Additional Mobile Optimizations for Extra Small Devices
 --------------------------------------------------------- */
 @media (max-width: 480px) {
   /* Extra small devices */
   .left-logo, .right-logo {
-    height: 40px;
+    height: 40px; /* Further reduce logos */
   }
 
   .icon-strip img {
-    height: 50px;
+    height: 50px; /* Even smaller icons in strip */
   }
 
   .headline {
@@ -1104,10 +1256,20 @@ footer {
     width: 100%;
     max-width: 220px;
   }
+  
+  /* Fix navigation for small screens */
+  #navbar ul.showNav {
+    max-height: 70vh; /* Smaller max height */
+  }
+  
+  /* Reduce background image height further */
+  .hero-background-image {
+    height: 150px !important;
+  }
 }
 
 /* -------------------------------------------------------
-   14) Tab List for Research Page
+   16) Tab List for Research Page
 --------------------------------------------------------- */
 .tab-list {
   display: flex;
@@ -1145,92 +1307,4 @@ footer {
 .tab-content.active {
   display: block;
   background-color: #fff;
-}
-
-/* -------------------------------------------------------
-   15) Icon Strip
---------------------------------------------------------- */
-.icon-strip {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  background-color: #000000;
-  padding: 1rem 0;
-}
-.icon-strip img {
-  height: 250px;
-  width: auto;
-  border-radius: 4px;
-}
-
-/* Center just the heading and intro text */
-.research-interests h2,
-.research-interests .interests-intro {
-  text-align: center;
-}
-
-/* Meeting Scheduler Section */
-.meeting-scheduler {
-    background-color: #000000; /* Black background */
-    padding: 2rem 2rem;
-    margin: 2rem 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.meeting-scheduler h2 {
-    color: #FFD100; /* Gold heading */
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.meeting-scheduler p {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #ffffff; /* White text */
-}
-
-/* Form Styling */
-.form-container {
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: #f8f9fa; /* Light background for the form */
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    border: 1px solid #FFD100; /* Gold border */
-}
-
-.form-row {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.form-group {
-    flex: 1;
-    margin-bottom: 1rem;
-}
-
-.form-row .form-group {
-    margin-bottom: 0;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.3rem;
-    font-weight: 600;
-    color: #333;
-    font-size: 0.95rem;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    color: #333;
-    transition: border-color 0.3s;
 }
