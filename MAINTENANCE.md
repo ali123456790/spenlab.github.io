@@ -12,7 +12,8 @@ This document provides detailed instructions for maintaining and updating the SP
 6. [Adding Research Publications](#adding-research-publications)
 7. [Updating Course Information](#updating-course-information)
 8. [Editing the Icon Strip](#editing-the-icon-strip)
-9. [Common Troubleshooting](#common-troubleshooting)
+9. [Managing the Meeting Request Form](#managing-the-meeting-request-form)
+10. [Common Troubleshooting](#common-troubleshooting)
 
 ---
 
@@ -314,6 +315,82 @@ If you need to add a fourth icon to the strip:
      gap: 1.5rem !important; /* Adjust this value */
    }
    ```
+
+## Managing the Meeting Request Form
+
+The website's meeting request form on the homepage uses Formspree.io to handle form submissions. This allows submissions to be sent directly to designated email addresses without requiring server-side code.
+
+### How the Form Works
+
+1. When visitors fill out and submit the form, data is sent to Formspree.io
+2. Formspree processes the data and emails it to the designated recipient (w10120702@usm.edu)
+3. The visitor is redirected to a thank-you page (thanks.html)
+
+### Changing the Form Recipient Email
+
+To change where form submissions are sent:
+
+1. Login to the Formspree account (credentials available from Dr. Sherif or the website maintainer)
+2. Visit your dashboard at: https://formspree.io/forms/
+3. Click on the form named "SPEN Lab Meeting Request Form"
+4. Go to the "Integration" tab
+5. Under "Email Notifications", update the forwarding email address
+6. Click "Save"
+
+No changes to the website code are needed when updating the recipient email.
+
+### Modifying Form Fields
+
+If you need to add, remove, or modify form fields:
+
+1. Open `index.html` in a text editor
+2. Find the meeting form section (around line 170):
+   ```html
+   <section class="meeting-scheduler">
+     <h2>Schedule a Meeting</h2>
+     <p>Please fill out this form to schedule a meeting with our team. We'll get back to you with confirmation shortly.</p>
+     <div class="form-container">
+       <form id="meeting-form" action="https://formspree.io/f/mldjewvq" method="POST">
+         <!-- Form fields here -->
+       </form>
+     </div>
+   </section>
+   ```
+3. Edit the form fields as needed. Each field follows this structure:
+   ```html
+   <div class="form-group">
+     <label for="fieldId">Field Label</label>
+     <input type="text" id="fieldId" name="fieldName" required>
+   </div>
+   ```
+4. Ensure the `name` attribute is included on any new form fields (this controls how the field appears in the email)
+5. Add the `required` attribute if the field is mandatory
+
+### Customizing the Thank You Page
+
+To modify the thank you page that appears after form submission:
+
+1. Open `thanks.html` in a text editor
+2. Modify the content within the `<div class="form-submission-message">` section
+3. Save the file
+
+### Form Submission Troubleshooting
+
+If the form isn't working correctly:
+
+1. **Form Submissions Not Being Received**
+   - Verify the Formspree account is active and not at its submission limit
+   - Check if submissions are being marked as spam in the recipient's email
+   - Look in the Formspree dashboard to see if submissions are being recorded
+
+2. **Error Messages When Submitting**
+   - Check the form action URL in `index.html` (should be `https://formspree.io/f/mldjewvq`)
+   - Verify all required form fields have the `required` attribute
+   - Ensure the form has `method="POST"` attribute
+
+3. **Customizing Email Format**
+   - To customize how emails are formatted, use the Formspree dashboard's "Email Notifications" settings
+   - Advanced customization may require a Formspree paid plan
 
 ## Common Troubleshooting
 
