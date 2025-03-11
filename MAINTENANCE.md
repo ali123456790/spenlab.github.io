@@ -1,7 +1,7 @@
 # SPEN Lab Website Maintenance Guide
 
 <p align="center">
-  <img src="images/logos/spen-logo.png" alt="SPEN Lab Logo" width="200"/>
+  <img src="images/logo.png" alt="SPEN Lab Logo" width="250"/>
 </p>
 
 This comprehensive guide provides detailed instructions for maintaining and updating the SPEN Lab website. It is designed for lab members, students, and staff who need to make routine content updates without extensive web development experience.
