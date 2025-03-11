@@ -726,3 +726,75 @@ window.addEventListener('orientationchange', function() {
   `;
   document.head.appendChild(style);
 })();
+
+// Add this to your script.js file to ensure icons display properly on all pages
+document.addEventListener('DOMContentLoaded', function() {
+  // Force icons to display on all pages
+  function fixIcons() {
+    // Get all icon strip sections
+    const iconStrips = document.querySelectorAll('.icon-strip');
+    
+    if (iconStrips.length === 0) {
+      console.log('No icon strip found, creating one');
+      // If no icon strip exists, create one after the header
+      const header = document.querySelector('header');
+      if (header) {
+        const newIconStrip = document.createElement('section');
+        newIconStrip.className = 'icon-strip';
+        newIconStrip.innerHTML = `
+          <img src="images/AI.png" alt="AI Icon" id="AI-icon" width="100" height="100" />
+          <img src="images/Hardware.png" alt="Hardware Icon" id="Hardware-icon" width="100" height="100" />
+          <img src="images/Security.png" alt="Security Icon" id="Security-icon" width="100" height="100" />
+        `;
+        header.after(newIconStrip);
+      }
+      return;
+    }
+    
+    // For each icon strip, ensure it has all three icons
+    iconStrips.forEach(strip => {
+      // Check for all three icons
+      const aiIcon = strip.querySelector('[alt="AI Icon"], #AI-icon');
+      const hardwareIcon = strip.querySelector('[alt="Hardware Icon"], #Hardware-icon');
+      const securityIcon = strip.querySelector('[alt="Security Icon"], #Security-icon');
+      
+      // If any icon is missing, rebuild the entire strip
+      if (!aiIcon || !hardwareIcon || !securityIcon) {
+        console.log('Rebuilding icon strip - missing icons detected');
+        strip.innerHTML = `
+          <img src="images/AI.png" alt="AI Icon" id="AI-icon" width="100" height="100" />
+          <img src="images/Hardware.png" alt="Hardware Icon" id="Hardware-icon" width="100" height="100" />
+          <img src="images/Security.png" alt="Security Icon" id="Security-icon" width="100" height="100" />
+        `;
+      }
+      
+      // Apply proper styling to ensure visibility
+      strip.style.display = 'flex';
+      strip.style.justifyContent = 'center';
+      strip.style.alignItems = 'center';
+      strip.style.gap = window.innerWidth <= 480 ? '0.5rem' : (window.innerWidth <= 768 ? '1rem' : '2rem');
+      strip.style.backgroundColor = '#000000';
+      strip.style.padding = '1rem 0';
+      strip.style.width = '100%';
+      
+      // Apply styling to each icon
+      const icons = strip.querySelectorAll('img');
+      const iconHeight = window.innerWidth <= 480 ? '50px' : (window.innerWidth <= 768 ? '60px' : '100px');
+      
+      icons.forEach(icon => {
+        icon.style.height = iconHeight;
+        icon.style.width = 'auto';
+        icon.style.display = 'inline-block';
+        icon.style.visibility = 'visible';
+        icon.style.opacity = '1';
+      });
+    });
+  }
+  
+  // Run icon fix immediately
+  fixIcons();
+  
+  // Also run on resize and load events
+  window.addEventListener('resize', fixIcons);
+  window.addEventListener('load', fixIcons);
+});
