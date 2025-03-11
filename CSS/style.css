@@ -200,7 +200,7 @@ header {
 
 /* Left logo (Southern Miss) */
 .left-logo {
-  height: 80px; /* FIXED: Reduced from 150px for desktop */
+  height: 120px; /* FIXED: Reduced from 150px for desktop */
   width: auto;
 }
 
@@ -259,7 +259,7 @@ header {
 
 /* The Spenn Lab logo on the far right */
 .right-logo {
-  height: 80px; /* FIXED: Reduced from 150px for desktop */
+  height: 120px; /* FIXED: Reduced from 150px for desktop */
   width: auto;
 }
 
