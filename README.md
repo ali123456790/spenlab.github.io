@@ -1,210 +1,154 @@
 # SPEN Lab Website
 
-This is the official website for the Security and Privacy of Emerging Networks (SPEN) Research Lab at the University of Southern Mississippi, showcasing research interests, publications, team information, and academic activities.
+<p align="center">
+  <img src="images/logos/spen-logo.png" alt="SPEN Lab Logo" width="250"/>
+</p>
 
 ## Overview
 
-The SPEN Lab website serves as a digital hub for Dr. Ahmed B. T. Sherif's research group, highlighting their work in cybersecurity, privacy, and networked systems. The site features a modern, responsive design with interactive elements to engage visitors and effectively communicate the lab's research focus and accomplishments.
+Welcome to the official repository for the Security and Privacy of Emerging Networks (SPEN) Lab website at The University of Southern Mississippi. This website showcases our research initiatives, team members, publications, and academic activities under the leadership of Dr. Ahmed B. T. Sherif.
 
-## Features
+## 🔍 Key Features
 
-- **Fully Responsive Design**: Optimized for all devices (desktop, tablet, mobile)
-- **Interactive Research Cards**: Animated cards with hover effects showcase research areas
-- **Interactive Course Cards**: Animated cards detail courses offered by the lab
-- **Tabbed Content Navigation**: Clean organization of publications and research outputs
-- **Team Member Profiles**: Showcases PhD students and research team
-- **Dynamic Content Sections**: Dedicated pages for teaching, service, research, and updates
-- **Optimized Image Loading**: Progressive and lazy loading for performance
-- **Animations & Transitions**: Modern UI with subtle animations for engagement
-- **Accessibility Features**: ARIA attributes and keyboard navigation
-- **Mobile-First Approach**: Touch-friendly elements and adaptive layouts
-- **Integrated Meeting Request Form**: Formspree-powered form for scheduling meetings without server-side code
+- **Modern Responsive Design:** Fully responsive layout optimized for all devices from mobile to desktop
+- **Enhanced Team Showcase:** Professional presentation of lab members with detailed profiles
+- **Research Portfolio:** Comprehensive display of research areas, publications, and achievements
+- **Publication Repository:** Organized system for research papers with downloadable resources
+- **Course Information:** Detailed information about courses taught by lab members
+- **Professional Service Tracking:** Timeline of conference roles, editorial positions, and other professional service
 
-## Technologies Used
+## 🛠️ Technologies Used
 
-- **HTML5**: Semantic markup for better structure and accessibility
-- **CSS3**: Modern features including:
-  - Grid and Flexbox layouts
-  - CSS Variables
-  - Animations and transitions
-  - Media queries for responsive design
-- **JavaScript (ES6+)**: Vanilla JS with modern features:
-  - Intersection Observer for lazy loading
-  - Event delegation for performance
-  - ES6 module pattern
-  - Touch event handling
-- **Third-Party Integration**:
-  - Formspree.io for form handling without backend code
-- **Development Approach**:
-  - Progressive enhancement
-  - Mobile-first responsive design
-  - Performance optimization techniques
-  - No dependencies on external frameworks
+- **Frontend:** HTML5, CSS3, JavaScript (ES6+)
+- **Styling:** CSS Grid, Flexbox, Custom animations
+- **Icons & Typography:** Font Awesome 5, Google Fonts
+- **Hosting & Deployment:** GitHub Pages
+- **Version Control:** Git
 
-## Getting Started
-
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/spenn-lab-website.git
-```
-
-2. Open the website:
-- Simply open `index.html` in your web browser
-- Or use a local server (recommended):
-  ```bash
-  # Using Python
-  python -m http.server
-  
-  # Using Node.js and http-server
-  npx http-server
-  ```
-
-## Project Structure
+## 📋 Project Structure
 
 ```
-spenn-lab-website/
-├── CSS/
-│   └── style.css         # Main stylesheet with responsive design
-├── js/
-│   └── script.js         # Main JavaScript with interactive features
-├── images/
-│   ├── logo.png          # SPEN Lab logo
-│   ├── AI.png            # AI icon for icon strip
-│   ├── Hardware.png      # Hardware icon for icon strip
-│   ├── Security.png      # Security icon for icon strip
-│   └── [other images]    # Various content images
-├── index.html            # Home page
-├── research.html         # Research interests and publications
-├── teaching.html         # Courses and teaching materials
-├── service.html          # Service activities
-├── team.html             # Team member profiles
-├── updates.html          # Recent updates and news
-├── supervisors.html      # Information about lab supervisors
-├── LICENSE               # License information
-└── README.md             # This documentation file
+spen-lab-website/
+├── index.html                # Home page
+├── research.html             # Research and publications
+├── team.html                 # Team members showcase
+├── courses.html              # Course information
+├── service.html              # Professional service
+├── contact.html              # Contact information
+├── CSS/                      # Styling directory
+│   └── style.css             # Main stylesheet
+├── js/                       # JavaScript directory
+│   └── script.js             # Main JavaScript functionality
+├── images/                   # Image assets
+│   ├── logos/                # Lab and organization logos
+│   ├── team/                 # Team member photos
+│   └── icons/                # UI and feature icons
+├── resources/                # Downloadable resources
+│   └── papers/               # Research papers (PDF)
+├── README.md                 # This documentation
+└── MAINTENANCE.md            # Detailed maintenance guide
 ```
 
-## Key Components
+## ⚙️ Installation & Setup
 
-### Interactive Card System
+### Prerequisites
 
-The site features an interactive card system for both research interests and courses:
-- Cards animate in with a staggered delay when page loads
-- Hover/focus effects include:
-  - Slight elevation (shadow and transform)
-  - Yellow accent border that grows from top
-  - Heading text shift
-  - Icon rotation and scaling
-  - Content shifts for visual interest
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- Git (for cloning and version control)
+- Basic knowledge of HTML, CSS, and JavaScript (for development)
+
+### Local Development
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/username/spen-lab-website.git
+   cd spen-lab-website
+   ```
+
+2. **View the website locally**
+   ```bash
+   # Open index.html in your browser
+   open index.html  # macOS
+   # OR
+   start index.html  # Windows
+   ```
+
+3. **Make changes**
+   - Edit HTML files to update content
+   - Modify CSS/style.css for styling changes
+   - Update JavaScript as needed
+
+4. **Test your changes**
+   - Test on multiple browsers and devices
+   - Verify responsive layouts at different screen sizes
+   - Check accessibility with screen readers and keyboard navigation
+
+5. **Deploy updates**
+   ```bash
+   git add .
+   git commit -m "Description of changes"
+   git push origin main
+   ```
+
+## 🌟 Key Components
+
+### Enhanced Team Page
+
+The team page has been professionally designed to showcase lab members with:
+
+- **Lab Director Section:** Dedicated area highlighting Dr. Ahmed Sherif's credentials and research focus
+- **Student Categories:** Organized sections for PhD, Master's, and Undergraduate students
+- **Detailed Profiles:** Professional photos, research interests, current projects, and contact information
+- **Social & Academic Integration:** Links to email, GitHub, LinkedIn, and other academic profiles
+- **Team Statistics:** Visual representation of lab metrics and research output
+
+### Research Showcase
+
+Comprehensive research information with:
+
+- **Research Areas:** Visual cards highlighting key research domains
+- **Publications:** Chronologically organized research publications with downloadable resources
+- **Research Highlights:** Featured achievements and significant contributions
 
 ### Responsive Navigation
 
-- Desktop: Horizontal navigation bar with dropdown capabilities
-- Tablet/Mobile: 
-  - Hamburger menu toggle
-  - Full-width overlay menu
-  - Touch-optimized tap targets
-  - Smooth transitions
+- **Adaptive Design:** Navigation system that transforms based on screen size
+- **Mobile Optimization:** Hamburger menu for smaller screens with touch-friendly targets
+- **Consistent Experience:** Uniform navigation patterns across all pages
 
-### Icon Strip Feature
+## 📝 Development Guidelines
 
-- Features three key icons (AI, Hardware, Security) that represent lab focus areas
-- Optimized sizing across devices:
-  - Desktop: 130px height
-  - Tablet: 100px height
-  - Mobile: 65px height
-- Consistent display across all pages
+### Best Practices
 
-### Responsive Image Strategy
+- **Responsive Design:** Test all changes on multiple screen sizes
+- **Accessibility:** Maintain WCAG 2.1 AA compliance with proper semantic HTML
+- **Performance:** Optimize images and minimize CSS/JS
+- **Consistency:** Follow established design patterns and naming conventions
 
-- Size-appropriate images for different viewports
-- Lazy loading for performance
-- Optimized image dimensions and compression
+### Coding Standards
 
-## CSS Architecture
+- HTML: Semantic elements, proper nesting, descriptive alt text
+- CSS: BEM naming convention, logical grouping, responsive principles
+- JavaScript: ES6+ features, modular structure, clear documentation
 
-The CSS is organized into logical sections:
-1. **Basic CSS Reset & Utilities**
-2. **Typography & Base Elements**
-3. **Header & Navigation**
-4. **Layout Components**
-5. **Hero Sections**
-6. **Cards & Interactive Elements**
-7. **Form Elements**
-8. **Footer**
-9. **Responsive Adjustments**
+## 🔄 Maintenance
 
-## JavaScript Features
+For detailed instructions on updating specific website sections, please refer to the [MAINTENANCE.md](MAINTENANCE.md) guide, which includes:
 
-The JavaScript provides several key functionalities:
-- **Mobile Navigation**: Toggle menu, overlay handling, and responsive adjustments
-- **Card Animations**: Staggered entrance animations and interactive hover effects
-- **Lazy Loading**: Performance-optimized image loading with Intersection Observer
-- **Tab System**: Interactive tabbed content navigation
-- **Touch Optimization**: Special handling for touch devices
-- **Responsive Adjustments**: Dynamic layout adjustments based on screen size
-- **Form Handling**: Integration with Formspree to enable server-less form submissions
+- Adding/updating team members
+- Managing research publications
+- Updating course information
+- Modifying the layout and design
+- Troubleshooting common issues
 
-## Responsive Design Breakpoints
+## 📞 Contact
 
-- **Desktop**: 1200px and above
-- **Tablet**: 768px to 1199px
-- **Mobile**: 480px to 767px
-- **Small Mobile**: 479px and below
+For questions about this repository or website:
 
-## Testing the Mobile Version
+- **Email:** Ahmed.Sherif@usm.edu
+- **Lab Website:** https://spenn-lab.github.io
+- **Address:** School of Computing Sciences and Computer Engineering, The University of Southern Mississippi, Hattiesburg, MS 39406
 
-To test the mobile responsiveness:
+## 📄 License
 
-1. **Using Browser DevTools**:
-   - Chrome/Edge: Right-click > Inspect > Toggle device toolbar (or Ctrl+Shift+M)
-   - Firefox: Right-click > Inspect Element > Responsive Design Mode
-   - Safari: Develop menu > Enter Responsive Design Mode
-
-2. **Using Online Tools**:
-   - [Responsinator](http://www.responsinator.com/)
-   - [BrowserStack](https://www.browserstack.com/)
-   - [Screenfly](http://quirktools.com/screenfly/)
-
-3. **On Real Devices**:
-   - Host the site locally or on a test server
-   - Connect mobile devices to the same network
-   - Enter your computer's local IP address plus port in the mobile browser
-
-## Development Guidelines
-
-When making changes to the website, please follow these guidelines:
-
-1. **Maintain Responsive Design**: Test any changes across multiple screen sizes
-2. **Preserve Accessibility**: Maintain ARIA attributes and keyboard navigation
-3. **Performance First**: Optimize images and minimize JavaScript operations
-4. **Browser Compatibility**: Test across major browsers (Chrome, Firefox, Safari, Edge)
-5. **Mobile Testing**: Verify touch interactions work properly on mobile devices
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact
-
-For any questions or contributions to the SPEN Lab website, please contact:
-- **Dr. Ahmed B. T. Sherif**: [Ahmed.Sherif@usm.edu](mailto:Ahmed.Sherif@usm.edu)
-- **Website Maintainer**: Zohaib Chaudhary
-
-## Form Submission System
-
-The website includes a meeting request form that leverages Formspree.io to handle submissions:
-
-1. **Client-Side Integration**: The form on the homepage submits directly to Formspree's servers
-2. **Email Notifications**: Form submissions are automatically emailed to the designated recipient
-3. **Thank You Page**: Custom thank-you page displays after successful submission
-4. **No Backend Required**: The system works without requiring any server-side code
-5. **Easy Maintenance**: Recipient email can be changed through the Formspree dashboard without modifying code 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
