@@ -200,7 +200,7 @@ header {
 
 /* Left logo (Southern Miss) */
 .left-logo {
-  height: 100px; /* FIXED: Reduced from 150px for desktop */
+  height: 80px; /* FIXED: Reduced from 150px for desktop */
   width: auto;
 }
 
@@ -259,7 +259,7 @@ header {
 
 /* The Spenn Lab logo on the far right */
 .right-logo {
-  height: 100px; /* FIXED: Reduced from 150px for desktop */
+  height: 80px; /* FIXED: Reduced from 150px for desktop */
   width: auto;
 }
 
@@ -858,6 +858,22 @@ body > .icon-strip img,
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     border: 1px solid #FFD100; /* Gold border */
+}
+
+/* Form submission message styling */
+.form-submission-message {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.form-submission-message h3 {
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.form-submission-message p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .form-row {
