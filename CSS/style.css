@@ -618,6 +618,72 @@ main {
   color: #000000;
 }
 
+/* Styles for course cards with animation capabilities */
+.course-card.interests-card {
+  background-color: #000000;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Yellow accent border on left side */
+.course-card.interests-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background-color: #FFD100;
+  transition: height 0.5s ease;
+}
+
+/* Hover effects */
+.course-card.interests-card:hover,
+.course-card.interests-card:focus,
+.course-card.interests-card.touch-active {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.course-card.interests-card:hover::before,
+.course-card.interests-card:focus::before,
+.course-card.interests-card.touch-active::before {
+  height: 100%;
+}
+
+/* Heading animation and styling */
+.course-card.interests-card h4 {
+  color: #FFD100;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 0;
+  transition: padding-left 0.3s ease, color 0.3s ease;
+}
+
+.course-card.interests-card:hover h4,
+.course-card.interests-card:focus h4,
+.course-card.interests-card.touch-active h4 {
+  padding-left: 10px;
+}
+
+/* Animation classes for course cards */
+.course-card.interests-card.animate {
+  animation: cardAppear 0.5s ease forwards;
+}
+
+/* Icon animation for course cards */
+.course-card.interests-card .card-icon {
+  transition: transform 0.3s ease;
+}
+
+.course-card.interests-card:hover .card-icon,
+.course-card.interests-card:focus .card-icon,
+.course-card.interests-card.touch-active .card-icon {
+  transform: rotate(10deg) scale(1.2);
+}
+
 /* -------------------------------------------------------
    10) Supervisor Info on Home Page (If used)
 --------------------------------------------------------- */
@@ -716,15 +782,15 @@ footer {
   align-items: center !important;
   gap: 2rem !important;
   background-color: #000000 !important;
-  padding: 1rem 0 !important;
-  max-height: 120px !important;
+  padding: 1.5rem 0 !important; /* Increased padding to accommodate larger icons */
+  max-height: 160px !important; /* Increased from 120px to allow for bigger icons */
   overflow: hidden !important;
   width: 100% !important;
 }
 
 /* Force consistent icon sizing - this is key for all pages */
 .icon-strip img {
-  height: 100px !important;
+  height: 130px !important; /* Increased from 100px */
   width: auto !important;
   max-width: none !important;
   border-radius: 4px !important;
@@ -738,7 +804,7 @@ footer {
 body > .icon-strip img,
 .index.html .icon-strip img,
 .research.html .icon-strip img {
-  height: 100px !important;
+  height: 130px !important; /* Increased from 100px */
   width: auto !important;
   display: inline-block !important;
   visibility: visible !important;
@@ -753,7 +819,7 @@ body > .icon-strip img,
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
-  min-height: 100px !important;
+  min-height: 130px !important; /* Increased from 100px */
 }
 
 /* Center just the heading and intro text */
@@ -945,7 +1011,7 @@ input, select, textarea {
 
   /* Dramatically reduce icon strip height */
   .icon-strip {
-    padding: 0.5rem 0 !important;
+    padding: 0.7rem 0 !important; /* Increased from 0.5rem for larger icons */
     gap: 1rem !important;
     overflow: hidden;
     max-height: none; /* Remove max-height limit on mobile */
@@ -959,8 +1025,8 @@ input, select, textarea {
   .icon-strip img[alt="AI Icon"],
   .icon-strip img[alt="Hardware Icon"],
   .icon-strip img[alt="Security Icon"] {
-    height: 60px !important;
-    min-height: 60px !important;
+    height: 100px !important; /* Increased from 60px */
+    min-height: 100px !important;
   }
 
   /* Hero section improvements */
@@ -1256,8 +1322,8 @@ input, select, textarea {
   .icon-strip img[alt="AI Icon"],
   .icon-strip img[alt="Hardware Icon"],
   .icon-strip img[alt="Security Icon"] {
-    height: 50px !important;
-    min-height: 50px !important;
+    height: 65px !important; /* Increased from 50px */
+    min-height: 65px !important;
   }
 
   .icon-strip {
