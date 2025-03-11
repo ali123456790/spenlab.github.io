@@ -18,6 +18,7 @@ The SPEN Lab website serves as a digital hub for Dr. Ahmed B. T. Sherif's resear
 - **Animations & Transitions**: Modern UI with subtle animations for engagement
 - **Accessibility Features**: ARIA attributes and keyboard navigation
 - **Mobile-First Approach**: Touch-friendly elements and adaptive layouts
+- **Integrated Meeting Request Form**: Formspree-powered form for scheduling meetings without server-side code
 
 ## Technologies Used
 
@@ -32,6 +33,8 @@ The SPEN Lab website serves as a digital hub for Dr. Ahmed B. T. Sherif's resear
   - Event delegation for performance
   - ES6 module pattern
   - Touch event handling
+- **Third-Party Integration**:
+  - Formspree.io for form handling without backend code
 - **Development Approach**:
   - Progressive enhancement
   - Mobile-first responsive design
@@ -140,7 +143,7 @@ The JavaScript provides several key functionalities:
 - **Tab System**: Interactive tabbed content navigation
 - **Touch Optimization**: Special handling for touch devices
 - **Responsive Adjustments**: Dynamic layout adjustments based on screen size
-- **Form Handling**: Validation and submission handling
+- **Form Handling**: Integration with Formspree to enable server-less form submissions
 
 ## Responsive Design Breakpoints
 
@@ -188,10 +191,20 @@ When making changes to the website, please follow these guidelines:
 
 ## License
 
-This project is licensed under the USM License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contact
 
 For any questions or contributions to the SPEN Lab website, please contact:
 - **Dr. Ahmed B. T. Sherif**: [Ahmed.Sherif@usm.edu](mailto:Ahmed.Sherif@usm.edu)
-- **Website Maintainer**: Zohaib Chaudhary 
+- **Website Maintainer**: Zohaib Chaudhary
+
+## Form Submission System
+
+The website includes a meeting request form that leverages Formspree.io to handle submissions:
+
+1. **Client-Side Integration**: The form on the homepage submits directly to Formspree's servers
+2. **Email Notifications**: Form submissions are automatically emailed to the designated recipient
+3. **Thank You Page**: Custom thank-you page displays after successful submission
+4. **No Backend Required**: The system works without requiring any server-side code
+5. **Easy Maintenance**: Recipient email can be changed through the Formspree dashboard without modifying code 
