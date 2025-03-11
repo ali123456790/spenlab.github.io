@@ -1298,3 +1298,49 @@ input, select, textarea {
     color: #333;
     transition: border-color 0.3s;
 }
+
+/* Desktop header improvements */
+@media (min-width: 769px) {
+  header {
+    padding: 1rem 2rem;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .header-left, .header-right {
+    flex: 0 0 auto;
+    max-width: 200px;
+  }
+  
+  .header-center {
+    flex: 1;
+  }
+  
+  /* Fix icon strip spacing */
+  .icon-strip {
+    padding: 1rem 0;
+    gap: 2rem;
+    justify-content: center;
+    max-height: 150px;
+    overflow: hidden;
+  }
+  
+  .icon-strip img {
+    height: 120px;
+    width: auto;
+  }
+  
+  /* Fix hero section spacing */
+  .hero {
+    padding: 2rem;
+    margin-top: 0;
+    min-height: auto;
+  }
+  
+  /* Improve research cards alignment */
+  .interests-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
