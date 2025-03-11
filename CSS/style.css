@@ -708,22 +708,52 @@ footer {
 }
 
 /* -------------------------------------------------------
-   13) Icon Strip - FIXED FOR DESKTOP
+   13) Icon Strip - FIXED FOR ALL PAGES
 --------------------------------------------------------- */
 .icon-strip {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem; /* FIXED: Increased from 1rem for better spacing */
-  background-color: #000000;
-  padding: 1rem 0;
-  max-height: 120px; /* FIXED: Limit height for desktop */
-  overflow: hidden;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  background-color: #000000 !important;
+  padding: 1rem 0 !important;
+  max-height: 120px !important;
+  overflow: hidden !important;
+  width: 100% !important;
 }
+
+/* Force consistent icon sizing - this is key for all pages */
 .icon-strip img {
-  height: 100px; /* FIXED: Reduced from 250px */
-  width: auto;
-  border-radius: 4px;
+  height: 100px !important;
+  width: auto !important;
+  max-width: none !important;
+  border-radius: 4px !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Specific fix for home page and research page */
+body > .icon-strip img,
+.index.html .icon-strip img,
+.research.html .icon-strip img {
+  height: 100px !important;
+  width: auto !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Make sure icons are visible on all pages */
+#AI-icon, #Hardware-icon, #Security-icon,
+.icon-strip img[alt="AI Icon"],
+.icon-strip img[alt="Hardware Icon"],
+.icon-strip img[alt="Security Icon"] {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-height: 100px !important;
 }
 
 /* Center just the heading and intro text */
@@ -915,16 +945,22 @@ input, select, textarea {
 
   /* Dramatically reduce icon strip height */
   .icon-strip {
-    padding: 0.5rem 0;
-    gap: 0.5rem;
+    padding: 0.5rem 0 !important;
+    gap: 1rem !important;
     overflow: hidden;
     max-height: none; /* Remove max-height limit on mobile */
   }
 
-  .icon-strip img {
-    height: 60px; /* Reduced from 100px */
-    width: auto;
-    border-radius: 3px; /* Slightly reduced radius */
+  .icon-strip img,
+  body > .icon-strip img,
+  .index.html .icon-strip img,
+  .research.html .icon-strip img,
+  #AI-icon, #Hardware-icon, #Security-icon,
+  .icon-strip img[alt="AI Icon"],
+  .icon-strip img[alt="Hardware Icon"],
+  .icon-strip img[alt="Security Icon"] {
+    height: 60px !important;
+    min-height: 60px !important;
   }
 
   /* Hero section improvements */
@@ -1212,8 +1248,20 @@ input, select, textarea {
     height: 40px; /* Further reduce logos */
   }
 
-  .icon-strip img {
-    height: 50px; /* Even smaller icons in strip */
+  .icon-strip img,
+  body > .icon-strip img,
+  .index.html .icon-strip img,
+  .research.html .icon-strip img,
+  #AI-icon, #Hardware-icon, #Security-icon,
+  .icon-strip img[alt="AI Icon"],
+  .icon-strip img[alt="Hardware Icon"],
+  .icon-strip img[alt="Security Icon"] {
+    height: 50px !important;
+    min-height: 50px !important;
+  }
+
+  .icon-strip {
+    gap: 0.5rem !important;
   }
 
   .headline {
