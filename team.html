@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Spen Lab – Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+  <meta name="description" content="Meet the talented researchers and students at SPEN Lab, led by Dr. Ahmed Sherif at the University of Southern Mississippi." />
+  <meta name="theme-color" content="#000000">
+  <title>SPEN Lab – Our Team</title>
   <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
 
   <!-- Header -->
   <header>
@@ -43,41 +50,85 @@
     <img src="images/Security.png" alt="Security Icon" />
   </section>
 
+  <!-- Hero Section -->
+  <section class="hero team-hero">
+    <div class="hero-text">
+      <h1>Our Team</h1>
+      <p>
+        Meet the researchers, students, and collaborators who make SPEN Lab a center of excellence
+        in cybersecurity, privacy, and networked systems research.
+      </p>
+    </div>
+  </section>
+
   <!-- Main Content -->
   <main>
-    <!-- Intro Section -->
-    <section class="page-title">
-      <h1>Welcome to Spen Lab</h1>
-      <p>
-        At Spen Lab, we are dedicated to pushing the frontiers of artificial intelligence
-        and innovative research. Our work is led by Dr. Ahmed Sherif, whose expertise and
-        passion for AI inspire every project we undertake. Under his mentorship, our talented
-        team of students is breaking new ground in their respective fields.
-      </p>
+    <!-- Lab Director Section -->
+    <section class="director-section">
+      <h2>Lab Director</h2>
+      <div class="director-profile">
+        <div class="director-image">
+          <img src="images/1.png" alt="Dr. Ahmed Sherif - Lab Director" />
+        </div>
+        <div class="director-info">
+          <h3>Dr. Ahmed B. T. Sherif</h3>
+          <p class="director-title">Assistant Professor, School of Computing Sciences and Computer Engineering</p>
+          <p class="director-bio">
+            Dr. Sherif leads the Security and Privacy of Emerging Networks (SPEN) Lab at the 
+            University of Southern Mississippi. His research focuses on privacy-preserving technologies, 
+            network security, and AI-enhanced cybersecurity solutions.
+          </p>
+          <p>PhD in Computer Engineering, University of Waterloo, Canada</p>
+          <div class="director-links">
+            <a href="mailto:Ahmed.Sherif@usm.edu" class="profile-link"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://www.researchgate.net/scientific-contributions/Ahmed-Sherif-2201102567" target="_blank" class="profile-link"><i class="fab fa-researchgate"></i> ResearchGate</a>
+            <a href="https://scholar.google.com/citations?user=Ob72V6IAAAAJ&hl=en" target="_blank" class="profile-link"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="https://www.linkedin.com/in/ahmed-sherif-0857a021/" target="_blank" class="profile-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="intro">
-      <h2>Our Team</h2>
+    <!-- Intro Section -->
+    <section class="team-intro">
       <p>
-        Collaboration and cutting-edge research lie at the heart of everything we do.
-        Together, we are shaping the future of technology and redefining the landscape
-        of artificial intelligence.
+        At SPEN Lab, we believe that great research comes from collaboration and diversity of thought.
+        Our team brings together students from various backgrounds, disciplines, and academic levels
+        to tackle important challenges in cybersecurity and privacy.
       </p>
+      <div class="team-stats">
+        <div class="stat-box">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Active Researchers</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">30+</span>
+          <span class="stat-label">Publications</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Research Areas</span>
+        </div>
+      </div>
     </section>
 
     <!-- PhD Students -->
     <section class="team-group">
-      <h3>PhD Students</h3>
+      <h2>PhD Students</h2>
       <div class="team-cards">
         <!-- Zain Chaudhary -->
         <article class="team-card detailed-profile">
           <img src="images/3.png" alt="Zain Chaudhary - PhD Student" />
           <div class="profile-info">
-            <p><strong>Name:</strong> Zain Chaudhary</p>
-            <p><strong>Title:</strong> PhD Student</p>
-            <p><strong>Major:</strong> Computer Science</p>
-            <p><strong>Research:</strong> Reinforcement Learning for AVs</p>
-            <p><strong>First Employment:</strong> N/A</p>
+            <h3>Zain Chaudhary</h3>
+            <p class="profile-title">PhD Student in Computer Science</p>
+            <p><strong>Research Focus:</strong> Reinforcement Learning for Autonomous Vehicles</p>
+            <p><strong>Current Project:</strong> Developing privacy-aware navigation systems for connected vehicles</p>
+            <div class="profile-links">
+              <a href="mailto:zain.chaudhary@usm.edu" class="profile-link"><i class="fas fa-envelope"></i></a>
+              <a href="https://github.com/zainchaudhary" target="_blank" class="profile-link"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/zain-chaudhary/" target="_blank" class="profile-link"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
         </article>
 
@@ -85,11 +136,15 @@
         <article class="team-card detailed-profile">
           <img src="images/4.png" alt="Zohaib Chaudhary - PhD Student" />
           <div class="profile-info">
-            <p><strong>Name:</strong> Zohaib Chaudhary</p>
-            <p><strong>Title:</strong> PhD Student</p>
-            <p><strong>Major:</strong> Computer Science</p>
-            <p><strong>Research:</strong> Privacy-Preserving AI in Healthcare</p>
-            <p><strong>First Employment:</strong> N/A</p>
+            <h3>Zohaib Chaudhary</h3>
+            <p class="profile-title">PhD Student in Computer Science</p>
+            <p><strong>Research Focus:</strong> Privacy-Preserving AI in Healthcare</p>
+            <p><strong>Current Project:</strong> Federated learning techniques for secure medical image analysis</p>
+            <div class="profile-links">
+              <a href="mailto:zohaib.chaudhary@usm.edu" class="profile-link"><i class="fas fa-envelope"></i></a>
+              <a href="https://github.com/zohaibchaudhary" target="_blank" class="profile-link"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/zohaib-chaudhary/" target="_blank" class="profile-link"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
         </article>
 
@@ -97,28 +152,34 @@
         <article class="team-card detailed-profile">
           <img src="images/6.png" alt="Mehmood - PhD Student" />
           <div class="profile-info">
-            <p><strong>Name:</strong> Mehmood</p>
-            <p><strong>Title:</strong> PhD Student</p>
-            <p><strong>Major:</strong> Electrical &amp; Computer Engineering</p>
-            <p><strong>Research:</strong> Scalable Machine Learning for Big Data</p>
-            <p><strong>First Employment:</strong> N/A</p>
+            <h3>Mehmood</h3>
+            <p class="profile-title">PhD Student in Electrical &amp; Computer Engineering</p>
+            <p><strong>Research Focus:</strong> Scalable Machine Learning for Big Data</p>
+            <p><strong>Current Project:</strong> Distributed computing frameworks for privacy-preserving data analysis</p>
+            <div class="profile-links">
+              <a href="mailto:mehmood@usm.edu" class="profile-link"><i class="fas fa-envelope"></i></a>
+              <a href="https://github.com/mehmood" target="_blank" class="profile-link"><i class="fab fa-github"></i></a>
+            </div>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Master’s Student -->
+    <!-- Master's Student -->
     <section class="team-group">
-      <h3>Master’s Student</h3>
+      <h2>Master's Students</h2>
       <div class="team-cards">
         <article class="team-card detailed-profile">
           <img src="images/5.png" alt="Eduardo - Master's Student" />
           <div class="profile-info">
-            <p><strong>Name:</strong> Eduardo</p>
-            <p><strong>Title:</strong> Master’s Student</p>
-            <p><strong>Major:</strong> Computer Engineering</p>
-            <p><strong>Research:</strong> Deep Learning &amp; NLP</p>
-            <p><strong>First Employment:</strong> N/A</p>
+            <h3>Eduardo Hernandez Escobar</h3>
+            <p class="profile-title">Master's Student in Computer Engineering</p>
+            <p><strong>Research Focus:</strong> Authentication for Aerial Networks</p>
+            <p><strong>Current Project:</strong> Security protocols for Internet of Drones (IoD)</p>
+            <div class="profile-links">
+              <a href="mailto:eduardo.hernandez@usm.edu" class="profile-link"><i class="fas fa-envelope"></i></a>
+              <a href="https://github.com/eduardohe" target="_blank" class="profile-link"><i class="fab fa-github"></i></a>
+            </div>
           </div>
         </article>
       </div>
@@ -126,17 +187,20 @@
 
     <!-- Undergraduate Students -->
     <section class="team-group">
-      <h3>Undergraduate Students</h3>
+      <h2>Undergraduate Students</h2>
       <div class="team-cards">
         <!-- Tim Leonard -->
         <article class="team-card detailed-profile">
           <img src="images/7.png" alt="Tim Leonard - Undergraduate" />
           <div class="profile-info">
-            <p><strong>Name:</strong> Tim Leonard</p>
-            <p><strong>Title:</strong> Undergraduate Student</p>
-            <p><strong>Major:</strong> Computer Science</p>
-            <p><strong>Research:</strong> Real-time Image Processing</p>
-            <p><strong>First Employment:</strong> N/A</p>
+            <h3>Tim Leonard</h3>
+            <p class="profile-title">Undergraduate in Computer Science</p>
+            <p><strong>Research Focus:</strong> Real-time Image Processing for Security</p>
+            <p><strong>Current Project:</strong> Federated learning for intrusion detection in vehicular networks</p>
+            <div class="profile-links">
+              <a href="mailto:tim.leonard@usm.edu" class="profile-link"><i class="fas fa-envelope"></i></a>
+              <a href="https://github.com/timleonard" target="_blank" class="profile-link"><i class="fab fa-github"></i></a>
+            </div>
           </div>
         </article>
 
@@ -144,11 +208,13 @@
         <article class="team-card detailed-profile">
           <img src="images/8.png" alt="Sajim - Undergraduate" />
           <div class="profile-info">
-            <p><strong>Name:</strong> Sajim</p>
-            <p><strong>Title:</strong> Undergraduate Student</p>
-            <p><strong>Major:</strong> Computer Engineering</p>
-            <p><strong>Research:</strong> IoT Security &amp; Embedded Systems</p>
-            <p><strong>First Employment:</strong> N/A</p>
+            <h3>Sajim</h3>
+            <p class="profile-title">Undergraduate in Computer Engineering</p>
+            <p><strong>Research Focus:</strong> IoT Security &amp; Embedded Systems</p>
+            <p><strong>Current Project:</strong> Lightweight authentication for resource-constrained IoT devices</p>
+            <div class="profile-links">
+              <a href="mailto:sajim@usm.edu" class="profile-link"><i class="fas fa-envelope"></i></a>
+            </div>
           </div>
         </article>
 
@@ -156,11 +222,13 @@
         <article class="team-card detailed-profile">
           <img src="images/pic-placeholder.png" alt="Abdul - Undergraduate" />
           <div class="profile-info">
-            <p><strong>Name:</strong> Abdul</p>
-            <p><strong>Title:</strong> Undergraduate Student</p>
-            <p><strong>Major:</strong> Software Engineering</p>
-            <p><strong>Research:</strong> Data Analysis &amp; Front-end Dev</p>
-            <p><strong>First Employment:</strong> N/A</p>
+            <h3>Abdul</h3>
+            <p class="profile-title">Undergraduate in Software Engineering</p>
+            <p><strong>Research Focus:</strong> Data Analysis &amp; Front-end Development</p>
+            <p><strong>Current Project:</strong> Accessible security interfaces for privacy-aware applications</p>
+            <div class="profile-links">
+              <a href="mailto:abdul@usm.edu" class="profile-link"><i class="fas fa-envelope"></i></a>
+            </div>
           </div>
         </article>
 
@@ -168,10 +236,13 @@
         <article class="team-card detailed-profile">
           <img src="images/pic-placeholder.png" alt="Nimo Mohamud" />
           <div class="profile-info">
-            <p><strong>Name:</strong> Nimo Mohamud</p>
-            <p><strong>Title:</strong> Undergraduate Student</p>
-            <p><strong>Research:</strong> ...</p>
-            <p><strong>First Employment:</strong> N/A</p>
+            <h3>Nimo Mohamud</h3>
+            <p class="profile-title">Undergraduate Student</p>
+            <p><strong>Research Focus:</strong> Privacy in Mobile Applications</p>
+            <p><strong>Current Project:</strong> Analysis of permission systems in smartphone ecosystems</p>
+            <div class="profile-links">
+              <a href="mailto:nimo.mohamud@usm.edu" class="profile-link"><i class="fas fa-envelope"></i></a>
+            </div>
           </div>
         </article>
 
@@ -179,10 +250,13 @@
         <article class="team-card detailed-profile">
           <img src="images/pic-placeholder.png" alt="Meenakshi Iyer" />
           <div class="profile-info">
-            <p><strong>Name:</strong> Meenakshi Iyer</p>
-            <p><strong>Title:</strong> Undergraduate Student</p>
-            <p><strong>Research:</strong> ...</p>
-            <p><strong>First Employment:</strong> N/A</p>
+            <h3>Meenakshi Iyer</h3>
+            <p class="profile-title">Undergraduate Student</p>
+            <p><strong>Research Focus:</strong> Secure Machine Learning</p>
+            <p><strong>Current Project:</strong> Investigating adversarial examples in traffic sign recognition</p>
+            <div class="profile-links">
+              <a href="mailto:meenakshi.iyer@usm.edu" class="profile-link"><i class="fas fa-envelope"></i></a>
+            </div>
           </div>
         </article>
 
@@ -190,19 +264,24 @@
         <article class="team-card detailed-profile">
           <img src="images/pic-placeholder.png" alt="James Biondi" />
           <div class="profile-info">
-            <p><strong>Name:</strong> James Biondi</p>
-            <p><strong>Title:</strong> Undergraduate Student</p>
-            <p><strong>Research:</strong> ...</p>
-            <p><strong>First Employment:</strong> N/A</p>
+            <h3>James Biondi</h3>
+            <p class="profile-title">Undergraduate Student</p>
+            <p><strong>Research Focus:</strong> Network Security</p>
+            <p><strong>Current Project:</strong> Automated vulnerability scanning in IoT networks</p>
+            <div class="profile-links">
+              <a href="mailto:james.biondi@usm.edu" class="profile-link"><i class="fas fa-envelope"></i></a>
+            </div>
           </div>
         </article>
-
       </div>
     </section>
+
+    <!-- Research Highlights Section -->
+    
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Spen Lab. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> SPEN Lab. All rights reserved.</p>
   </footer>
 
   <script src="js/script.js"></script>
