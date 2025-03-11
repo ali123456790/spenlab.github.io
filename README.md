@@ -146,7 +146,7 @@ For detailed instructions on updating specific website sections, please refer to
 For questions about this repository or website:
 
 - **Email:** Ahmed.Sherif@usm.edu
-- **Lab Website:** https://spenn-lab.github.io
+- **Lab Website:** wwwspen.com
 - **Address:** School of Computing Sciences and Computer Engineering, The University of Southern Mississippi, Hattiesburg, MS 39406
 
 ## 📄 License
