@@ -571,5 +571,5 @@ For additional assistance or complex issues, please contact the website administ
 
 For questions about website maintenance:
 
-- **Website Administrator**: Ahmed Sherif
-- **Email**: Ahmed.Sherif@usm.edu 
+- **Website Administrator**: Zohaib Ch
+- **Email**: w10120702@usm.edu 
