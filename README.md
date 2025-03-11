@@ -188,7 +188,7 @@ When making changes to the website, please follow these guidelines:
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the USM License
 
 ## Contact
 
