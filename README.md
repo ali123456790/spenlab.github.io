@@ -1,7 +1,7 @@
 # SPEN Lab Website
 
 <p align="center">
-  <img src="images/logos/spen-logo.png" alt="SPEN Lab Logo" width="250"/>
+  <img src="images/logo.png" alt="SPEN Lab Logo" width="250"/>
 </p>
 
 ## Overview
