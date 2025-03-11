@@ -739,11 +739,6 @@ footer {
     color: #000;
     background-color: #FFD100;
     border-radius: 4px;
-    min-height: 44px; /* NEW: Better touch target */
-    min-width: 44px; /* NEW: Better touch target */
-    display: flex; /* NEW: Center content */
-    align-items: center; /* NEW: Center content */
-    justify-content: center; /* NEW: Center content */
   }
 
   /* Improved mobile navigation */
@@ -751,10 +746,9 @@ footer {
     width: 100%;
   }
 
-  /* NEW: Enhanced mobile navigation styles */
   #navbar ul {
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.95); /* NEW: More opaque background */
+    background-color: #000000;
     display: none;
     padding: 0;
     position: absolute;
@@ -767,9 +761,6 @@ footer {
 
   #navbar ul.showNav {
     display: block;
-    max-height: 80vh; /* NEW: Limit height */
-    overflow-y: auto; /* NEW: Enable scrolling if too many items */
-    -webkit-overflow-scrolling: touch; /* NEW: Smooth scrolling on iOS */
   }
 
   #navbar ul li {
@@ -786,34 +777,6 @@ footer {
     padding: 0.8rem 1rem;
     text-align: center;
     width: 100%;
-    min-height: 44px; /* NEW: Ensure touch target size */
-    display: flex; /* NEW: Center content */
-    align-items: center; /* NEW: Center content */
-    justify-content: center; /* NEW: Center content */
-  }
-
-  #navbar a:active,
-  #navbar a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* NEW: Visual feedback */
-  }
-
-  /* NEW: Mobile menu overlay for better visibility */
-  .nav-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 99;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .nav-overlay.visible {
-    display: block;
-    opacity: 1;
   }
 
   /* Dramatically reduce icon strip height */
@@ -824,9 +787,8 @@ footer {
   }
 
   .icon-strip img {
-    height: 60px; /* Reduced from 250px */
+    height: 60px;
     width: auto;
-    border-radius: 3px; /* Slightly reduced radius */
   }
 
   /* Hero section improvements */
@@ -835,15 +797,6 @@ footer {
     margin-bottom: 1rem;
     border-radius: 4px;
     flex-direction: column;
-    min-height: auto; /* NEW: Prevent excessive height */
-    max-height: none; /* NEW: Allow content to determine height */
-  }
-
-  /* NEW: Handle background images in hero sections better */
-  .hero-background-image {
-    height: 200px !important; /* Force smaller height */
-    object-fit: cover !important;
-    object-position: center center !important;
   }
 
   .hero-content {
@@ -879,18 +832,16 @@ footer {
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
-    width: 100%; /* NEW: Full width container */
   }
 
   .cta-button {
     display: block;
     width: 90%;
     max-width: 240px;
-    margin: 0.5rem auto; /* NEW: More consistent spacing */
-    padding: 0.8rem 1rem; /* NEW: Increased padding for touch targets */
+    margin: 0 auto;
+    padding: 0.7rem 1rem;
     text-align: center;
     font-size: 0.9rem;
-    min-height: 44px; /* NEW: Ensure touch target size */
   }
 
   /* Main content adjustments */
@@ -1019,10 +970,6 @@ footer {
     border: 1px solid #ddd;
     text-align: center;
     margin-bottom: 0.2rem;
-    min-height: 44px; /* NEW: Ensure touch target size */
-    display: flex; /* NEW: Center content */
-    align-items: center; /* NEW: Center content */
-    justify-content: center; /* NEW: Center content */
   }
 
   .tab-link.active {
@@ -1082,7 +1029,6 @@ footer {
   .submit-button {
     width: 100%;
     padding: 0.7rem;
-    min-height: 44px; /* NEW: Ensure touch target size */
   }
 
   /* Fix issues with tables on mobile */
@@ -1106,16 +1052,16 @@ footer {
 }
 
 /* -------------------------------------------------------
-   14) Additional Mobile Optimizations for Extra Small Devices
+   16) Additional Mobile Optimizations for Extra Small Devices
 --------------------------------------------------------- */
 @media (max-width: 480px) {
   /* Extra small devices */
   .left-logo, .right-logo {
-    height: 40px; /* Further reduce logos */
+    height: 40px;
   }
 
   .icon-strip img {
-    height: 50px; /* Even smaller icons in strip */
+    height: 50px;
   }
 
   .headline {
@@ -1158,20 +1104,10 @@ footer {
     width: 100%;
     max-width: 220px;
   }
-  
-  /* NEW: Fix navigation for small screens */
-  #navbar ul.showNav {
-    max-height: 70vh; /* Smaller max height */
-  }
-  
-  /* NEW: Reduce background image height further */
-  .hero-background-image {
-    height: 150px !important;
-  }
 }
 
 /* -------------------------------------------------------
-   15) Tab List for Research Page
+   14) Tab List for Research Page
 --------------------------------------------------------- */
 .tab-list {
   display: flex;
@@ -1212,7 +1148,7 @@ footer {
 }
 
 /* -------------------------------------------------------
-   16) Icon Strip
+   15) Icon Strip
 --------------------------------------------------------- */
 .icon-strip {
   display: flex;
@@ -1297,50 +1233,4 @@ input, select, textarea {
     font-size: 0.95rem;
     color: #333;
     transition: border-color 0.3s;
-}
-
-/* Desktop header improvements */
-@media (min-width: 769px) {
-  header {
-    padding: 1rem 2rem;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .header-left, .header-right {
-    flex: 0 0 auto;
-    max-width: 200px;
-  }
-  
-  .header-center {
-    flex: 1;
-  }
-  
-  /* Fix icon strip spacing */
-  .icon-strip {
-    padding: 1rem 0;
-    gap: 2rem;
-    justify-content: center;
-    max-height: 150px;
-    overflow: hidden;
-  }
-  
-  .icon-strip img {
-    height: 120px;
-    width: auto;
-  }
-  
-  /* Fix hero section spacing */
-  .hero {
-    padding: 2rem;
-    margin-top: 0;
-    min-height: auto;
-  }
-  
-  /* Improve research cards alignment */
-  .interests-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    max-width: 1200px;
-    margin: 0 auto;
-  }
 }
